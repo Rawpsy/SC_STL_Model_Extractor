@@ -4,7 +4,8 @@
 #   3. cree la Release GitHub vX.Y.Z avec SC_Extractor.exe (c'est elle que lit le bouton "Mises a jour")
 # Usage : .\publish.ps1 -Notes "Nouveautes de cette version"
 # La version est celle de version.py : l'augmenter avant chaque publication.
-param([string]$Notes = "")
+#        .\publish.ps1 -ReleaseOnly -Notes "..."   (code deja envoye : cree seulement la Release)
+param([string]$Notes = "", [switch]$ReleaseOnly)
 $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot
 $Repo = "Rawpsy/SC_STL_Model_Extractor"
@@ -16,19 +17,24 @@ if (-not (Test-Path .git)) {  # premiere publication : depot local relie au depo
 
 $version = (Select-String -Path version.py -Pattern '__version__ = "([^"]+)"').Matches[0].Groups[1].Value
 $tag = "v$version"
-if (git tag --list $tag) { throw "L'etiquette $tag existe deja : augmentez la version dans version.py." }
-
-cmd /c "`"$PSScriptRoot\build_exe.bat`""
-if ($LASTEXITCODE -ne 0) { throw "Echec de la construction de l'exe." }
 $exe = Join-Path $PSScriptRoot "dist\SC_Extractor.exe"
-
-git add -A
-git commit -m "Version $version" | Out-Null
-git tag $tag
-git push origin HEAD --tags
+if (-not $ReleaseOnly) {
+    if (git tag --list $tag) { throw "L'etiquette $tag existe deja : augmentez la version dans version.py." }
+    cmd /c "`"$PSScriptRoot\build_exe.bat`""
+    if ($LASTEXITCODE -ne 0) { throw "Echec de la construction de l'exe." }
+    git add -A
+    git commit -m "Version $version" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" | Out-Null
+    git tag $tag
+    git push origin HEAD --tags
+}
+if (-not (Test-Path $exe)) { throw "dist\SC_Extractor.exe introuvable : lancez build_exe.bat." }
 
 # jeton GitHub enregistre par Git Credential Manager (aucun mot de passe dans ce script)
-$cred = "protocol=https`nhost=github.com`n`n" | git credential fill
+# (PowerShell 5.1 ajoute un retour chariot a chaque ligne envoyee a git : on passe par un fichier en LF)
+$credIn = Join-Path $env:TEMP "sc_credential_request.txt"
+[IO.File]::WriteAllText($credIn, "protocol=https`nhost=github.com`n`n")
+$cred = cmd /c "git credential fill < `"$credIn`""
+Remove-Item $credIn -ErrorAction SilentlyContinue
 $token = ($cred | Where-Object { $_ -like "password=*" }) -replace "^password=", ""
 if (-not $token) { throw "Pas d'identifiant GitHub enregistre : connectez-vous avec git une fois." }
 $headers = @{ Authorization = "Bearer $token"; Accept = "application/vnd.github+json"; "User-Agent" = "SC_Extractor-publish" }
