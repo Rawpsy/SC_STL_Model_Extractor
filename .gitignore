@@ -1,0 +1,24 @@
+# environnement et construction
+.venv/
+__pycache__/
+build/
+dist/
+*.spec
+
+# outils telecharges (Blender, StarBreaker) et donnees locales
+tools/
+cache/
+config.json
+entity_map.json
+vehicles.json
+objects.json
+repair_timings.json
+probe_cache.json
+
+# fichiers produits
+out_test/
+Extract/
+Impression/
+*.stl
+*.glb
+*.png
