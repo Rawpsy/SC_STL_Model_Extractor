@@ -14,6 +14,11 @@ d'alignement, evidement pour la resine.
 
 Le bouton "Mises a jour" installe la derniere version publiee.
 
+"Reperes web..." (ou `SC_Extractor.exe markers <entite|liste.txt> --out <dossier>`) produit une coque
+legere `hull.glb` et un `markers.json` par vaisseau pour un viewer web. Avec une cle de panel reglee
+dans l'interface (ou `panel_token` dans `config.json`, jamais dans le depot), les fichiers sont envoyes
+au panel apres chaque export ; `SC_Extractor.exe upload <dossier>` renvoie les exports existants.
+
 ## Developpement
 
 ```

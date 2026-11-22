@@ -411,9 +411,13 @@ def process(entity, outdir, p4k, lod=1, tris=150000, compress="draco", interior=
         shutil.rmtree(work, ignore_errors=True)
 
 
-def run_batch(entities, outdir, p4k, force=False, log=print, **kw):
+def run_batch(entities, outdir, p4k, force=False, log=print, upload=None, **kw):
+    """upload : True / False, ou None = envoi au panel si une cle est reglee (config.json)."""
+    import sc_panel
     outdir = Path(outdir)
     outdir.mkdir(parents=True, exist_ok=True)
+    if upload is None:
+        upload = sc_panel.enabled()
     done, failed, skipped = [], [], []
     for n, ent in enumerate(entities, 1):
         dest = outdir / sc_stl.safe_name(ent)
@@ -428,9 +432,15 @@ def run_batch(entities, outdir, p4k, force=False, log=print, **kw):
             log(f"  ok : {r['markers']} reperes, coque {r['hull_mb']} Mo, {r['seconds']} s")
         except Exception as exc:  # noqa: BLE001  un vaisseau qui echoue n'arrete pas le lot
             failed.append(ent)
-            with open(outdir / "errors.log", "a", encoding="utf-8") as f:
-                f.write(f"{time.strftime('%Y-%m-%d %H:%M:%S')}\t{ent}\t{exc}\n")
+            sc_panel.note_error(outdir, ent, exc)
             log(f"  ECHEC : {exc}")
+            continue
+        if upload:  # envoi au panel juste apres l'export reussi
+            good, detail = sc_panel.upload_dir(dest, log)
+            r["upload"] = good
+            log(f"  panel : {'envoye' if good else 'ECHEC'} - {detail}")
+            if not good:
+                sc_panel.note_error(outdir, ent, f"envoi au panel : {detail}")
     return done, failed, skipped
 
 
@@ -442,7 +452,36 @@ def read_entities(arg):
     return [arg]
 
 
+def file_logger(outdir, name):
+    """Affiche ET ecrit dans <outdir>/<name> (l'exe n'a pas de console)."""
+    Path(outdir).mkdir(parents=True, exist_ok=True)
+    path = Path(outdir) / name
+
+    def log(msg):
+        print(msg)
+        with open(path, "a", encoding="utf-8") as f:
+            f.write(f"{time.strftime('%Y-%m-%d %H:%M:%S')}  {msg}\n")
+    return log
+
+
+def main_upload(argv):
+    """upload <dossier_de_sortie> : renvoie au panel tous les sous-dossiers deja exportes."""
+    import sc_panel
+    ap = argparse.ArgumentParser(prog="sc_markers upload")
+    ap.add_argument("outdir")
+    a = ap.parse_args(argv)
+    if not sc_panel.settings()[1]:
+        sys.exit("Aucune cle de panel : reglez panel_token dans config.json ou dans l'interface.")
+    log = file_logger(a.outdir, "upload.log")
+    ok, failed, skipped = sc_panel.upload_all(a.outdir, log)
+    log(f"Envoi termine : {len(ok)} envoyes, {len(failed)} echecs, {len(skipped)} ignores")
+    return 1 if failed else 0
+
+
 def main(argv=None):
+    argv = sys.argv[1:] if argv is None else argv
+    if argv and argv[0] == "upload":
+        return main_upload(argv[1:])
     ap = argparse.ArgumentParser(prog="sc_markers", description=__doc__.split("\n")[0])
     ap.add_argument("entities", help="entite (ex. AEGS_Redeemer) ou fichier .txt, une entite par ligne")
     ap.add_argument("--out", required=True)
@@ -453,15 +492,20 @@ def main(argv=None):
     ap.add_argument("--force", action="store_true", help="refaire les entites deja faites")
     ap.add_argument("--keep-glb", action="store_true", help="garder le GLB complet de StarBreaker")
     ap.add_argument("--p4k", default=None)
+    up = ap.add_mutually_exclusive_group()
+    up.add_argument("--upload", dest="upload", action="store_true", default=None,
+                    help="envoyer au panel (par defaut : oui si panel_token est regle)")
+    up.add_argument("--no-upload", dest="upload", action="store_false", help="ne rien envoyer au panel")
     a = ap.parse_args(argv)
     p4k = a.p4k or sc_stl.load_config().get("p4k")
     if not p4k or not Path(p4k).is_file():
         sys.exit("Data.p4k introuvable : utilisez --p4k")
     ents = read_entities(a.entities)
-    done, failed, skipped = run_batch(ents, a.out, p4k, force=a.force, lod=a.lod, tris=a.tris,
-                                      compress=a.compress, interior=a.interior, keep_glb=a.keep_glb)
-    print(f"\nTermine : {len(done)} faits, {len(skipped)} deja faits, {len(failed)} echecs"
-          + (f" (voir {Path(a.out) / 'errors.log'})" if failed else ""))
+    log = file_logger(a.out, "sc_markers.log")
+    done, failed, skipped = run_batch(ents, a.out, p4k, force=a.force, log=log, upload=a.upload, lod=a.lod,
+                                      tris=a.tris, compress=a.compress, interior=a.interior, keep_glb=a.keep_glb)
+    log(f"Termine : {len(done)} faits, {len(skipped)} deja faits, {len(failed)} echecs"
+        + (f" (voir {Path(a.out) / 'errors.log'})" if failed else ""))
     return 1 if failed else 0
 
 

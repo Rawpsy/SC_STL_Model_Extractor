@@ -395,6 +395,18 @@ class App:
         for key, v in self.remove_vars.items():
             remember(v, "remove_" + key)
 
+        # envoi des "Reperes web" au panel : cle et choix gardes dans config.json (jamais dans git)
+        pan = ttk.LabelFrame(tkroot, text="Panel web (onglet Salvage)", padding=6)
+        pan.pack(fill="x", padx=6, pady=(0, 4))
+        ttk.Label(pan, text="Cle du panel :").pack(side="left")
+        self.panel_token = tk.StringVar(value="")
+        ttk.Entry(pan, textvariable=self.panel_token, show="*", width=48).pack(side="left", padx=4)
+        self.panel_upload = tk.BooleanVar(value=True)
+        ttk.Checkbutton(pan, text="Envoyer au panel apres l'export", variable=self.panel_upload).pack(
+            side="left", padx=10)
+        remember(self.panel_token, "panel_token")
+        remember(self.panel_upload, "panel_upload")
+
         self.bar =ttk.Progressbar(tkroot, mode="determinate")
         self.bar.pack(fill="x", padx=6, pady=(0, 6))
         self.status = ttk.Label(tkroot, text="", anchor="w")
@@ -1058,13 +1070,17 @@ class App:
             return
         self.status.config(text=f"Reperes web : {len(ents)} element(s)...")
         lod = int(self.lod_var.get())  # lu ici : Tkinter ne doit pas etre lu depuis le calcul
+        upload = self.panel_upload.get() and bool(self.panel_token.get().strip())
 
         def work():
             sc_stl.set_group("convert")
             done, failed, skipped = sc_markers.run_batch(
-                ents, out, self.p4k_path, lod=lod,
+                ents, out, self.p4k_path, lod=lod, upload=upload,
                 log=lambda m: self.q.put(("status", "Reperes web : " + m.strip())))
             msg = f"{len(done)} fait(s), {len(skipped)} deja fait(s), {len(failed)} echec(s) dans" + chr(10) + f"{out}"
+            if upload and done:
+                sent = sum(1 for r in done if r.get("upload"))
+                msg += chr(10) + f"Panel : {sent}/{len(done)} envoye(s)"
             if failed:
                 msg += chr(10) * 2 + "Echecs (voir errors.log) : " + ", ".join(failed[:6])
             self.q.put(("done", msg))
@@ -1289,6 +1305,9 @@ def main():
     if len(sys.argv) > 1 and sys.argv[1] == "markers":  # SC_Extractor.exe markers <entite|liste.txt> --out ...
         import sc_markers
         sys.exit(sc_markers.main(sys.argv[2:]))
+    if len(sys.argv) > 1 and sys.argv[1] == "upload":  # SC_Extractor.exe upload <dossier_de_sortie>
+        import sc_markers
+        sys.exit(sc_markers.main(["upload"] + sys.argv[2:]))
     if "--check" in sys.argv:
         self_check()
         return
