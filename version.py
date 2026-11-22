@@ -1,2 +1,2 @@
 """Version de SC Extractor : a augmenter a chaque publication (le bouton de mise a jour la compare)."""
-__version__ = "1.2.1"
+__version__ = "1.2.2"

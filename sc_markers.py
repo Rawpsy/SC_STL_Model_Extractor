@@ -218,34 +218,55 @@ class Scene:
         return named
 
     def world(self, i):
-        if i not in self._world:
-            p = self.parent.get(i)
-            self._world[i] = (self.world(p) if p is not None else np.eye(4)) @ local_matrix(self.nodes[i])
+        # boucle (pas de recursion) : certains vaisseaux (RSI_Salvation) ont des hierarchies tres profondes
+        chain, k, seen = [], i, set()
+        while k is not None and k not in self._world and k not in seen:  # seen : arbre avec boucle
+            seen.add(k)
+            chain.append(k)
+            k = self.parent.get(k)
+        if k in seen:
+            k = None
+        m = self._world[k] if k is not None else np.eye(4)
+        for k in reversed(chain):
+            m = m @ local_matrix(self.nodes[k])
+            self._world[k] = m
         return self._world[i]
 
     def bbox(self, i):
         """Boite englobante monde de tout le sous-arbre (None s'il n'y a aucun maillage)."""
         if i in self._bbox:
             return self._bbox[i]
-        lo, hi = np.full(3, np.inf), np.full(3, -np.inf)
-        nd = self.nodes[i]
-        if nd.get("mesh") in self.mesh_box:
-            mlo, mhi = self.mesh_box[nd["mesh"]]
-            corners = np.array([[x, y, z, 1.0] for x in (mlo[0], mhi[0]) for y in (mlo[1], mhi[1])
-                                for z in (mlo[2], mhi[2])])
-            pts = (self.world(i) @ corners.T).T[:, :3]
-            lo, hi = pts.min(axis=0), pts.max(axis=0)
-        for c in nd.get("children", []):
-            b = self.bbox(c)
-            if b is not None:
-                lo, hi = np.minimum(lo, b[0]), np.maximum(hi, b[1])
-        self._bbox[i] = (lo, hi) if np.all(np.isfinite(lo)) else None
+        order, stack, seen = [], [i], set()  # parcours iteratif, puis calcul des enfants vers les parents
+        while stack:
+            k = stack.pop()
+            if k in self._bbox or k in seen:  # seen : certains GLB (RSI_Salvation) ont une boucle dans l'arbre
+                continue
+            seen.add(k)
+            order.append(k)
+            stack.extend(self.nodes[k].get("children", []))
+        for k in reversed(order):
+            lo, hi = np.full(3, np.inf), np.full(3, -np.inf)
+            nd = self.nodes[k]
+            if nd.get("mesh") in self.mesh_box:
+                mlo, mhi = self.mesh_box[nd["mesh"]]
+                corners = np.array([[x, y, z, 1.0] for x in (mlo[0], mhi[0]) for y in (mlo[1], mhi[1])
+                                    for z in (mlo[2], mhi[2])])
+                pts = (self.world(k) @ corners.T).T[:, :3]
+                lo, hi = pts.min(axis=0), pts.max(axis=0)
+            for c in nd.get("children", []):
+                b = self._bbox.get(c)
+                if b is not None:
+                    lo, hi = np.minimum(lo, b[0]), np.maximum(hi, b[1])
+            self._bbox[k] = (lo, hi) if np.all(np.isfinite(lo)) else None
         return self._bbox[i]
 
     def subtree(self, i):
-        stack, out = [i], []
+        stack, out, seen = [i], [], set()
         while stack:
             k = stack.pop()
+            if k in seen:  # protection contre une boucle dans l'arbre du GLB
+                continue
+            seen.add(k)
             out.append(k)
             stack.extend(self.nodes[k].get("children", []))
         return out
@@ -346,6 +367,46 @@ def build_markers(scene):
 
 
 # ---------- traitement d'une entite ----------
+def repair_glb_cycles(src, dst):
+    """Reecrit le GLB sans les liens parent -> enfant qui creent une boucle (ou un 2e parent).
+
+    StarBreaker produit parfois un arbre de noeuds boucle (RSI_Salvation) : l'import glTF de Blender
+    echoue alors. Seul le JSON change ; le bloc binaire est recopie tel quel. Retourne le nombre de liens retires.
+    """
+    data = Path(src).read_bytes()
+    n = struct.unpack("<I", data[12:16])[0]
+    g = json.loads(data[20:20 + n])
+    nodes, seen, removed = g["nodes"], set(), 0
+    roots = [r for sc in g.get("scenes", []) for r in sc.get("nodes", [])]
+    # d'abord depuis les racines de la scene, puis depuis les noeuds orphelins (c'est la que se trouve la
+    # boucle du Salvation : des noeuds relies a aucune racine, que l'import de Blender parcourt quand meme)
+    for start in roots + list(range(len(nodes))):
+        if start in seen:
+            continue
+        seen.add(start)
+        stack = [start]
+        while stack:
+            k = stack.pop()
+            kids = nodes[k].get("children", [])
+            keep = [c for c in kids if c not in seen]
+            removed += len(kids) - len(keep)
+            seen.update(keep)
+            if kids:
+                if keep:
+                    nodes[k]["children"] = keep
+                else:
+                    nodes[k].pop("children")
+            stack.extend(reversed(keep))
+    if not removed:
+        return 0
+    js = json.dumps(g, separators=(",", ":")).encode("utf-8")
+    js += b" " * ((4 - len(js) % 4) % 4)  # les blocs GLB sont alignes sur 4 octets
+    rest = data[20 + n:]
+    total = 12 + 8 + len(js) + len(rest)
+    Path(dst).write_bytes(data[:8] + struct.pack("<I", total) + struct.pack("<I", len(js)) + b"JSON" + js + rest)
+    return removed
+
+
 def export_glb(entity, glb, p4k, lod):
     args = ["entity", "export", entity, str(glb), "--p4k", str(p4k), "--materials", "none",
             "--lod", str(lod), "--no-lights"]
@@ -365,7 +426,8 @@ def read_hierarchy(entity, p4k, work):
     return json.loads(re.sub(r",(\s*[\]}])", r"\1", path.read_text(encoding="utf-8")))
 
 
-def process(entity, outdir, p4k, lod=1, tris=150000, compress="draco", interior=False, keep_glb=False, log=print):
+def process(entity, outdir, p4k, lod=1, tris=150000, compress="draco", interior=False, keep_glb=False, log=print,
+            max_mb=None):
     dest = Path(outdir) / sc_stl.safe_name(entity)
     dest.mkdir(parents=True, exist_ok=True)
     work = Path(tempfile.mkdtemp(prefix="sc_glb_"))
@@ -374,6 +436,11 @@ def process(entity, outdir, p4k, lod=1, tris=150000, compress="draco", interior=
         glb = work / "complet.glb"
         log(f"  export StarBreaker (lod {lod}, interieur et equipements inclus)...")
         export_glb(entity, glb, p4k, lod)
+        fixed = work / "complet_repare.glb"
+        cut = repair_glb_cycles(glb, fixed)
+        if cut:
+            log(f"  arbre du GLB boucle : {cut} lien(s) retire(s) avant traitement")
+            glb = fixed
         scene = Scene(read_glb(glb))
         named = scene.name_interiors(read_hierarchy(entity, p4k, work))
         markers, ignored, unclassified = build_markers(scene)
@@ -386,10 +453,17 @@ def process(entity, outdir, p4k, lod=1, tris=150000, compress="draco", interior=
                "markers": markers}
         (dest / "markers.json").write_text(json.dumps(doc, indent=1, ensure_ascii=False), encoding="utf-8")
         log(f"  {len(markers)} reperes ; coque web...")
-        hull = sc_stl.run_blender(["webhull", glb, dest / "hull.glb", "--tris", tris, "--interior",
-                                   1 if interior else 0, "--compress", compress], timeout=3600)
-        if "error" in hull:
-            raise sc_stl.ConvertError(hull["error"])
+        target = tris
+        while True:
+            hull = sc_stl.run_blender(["webhull", glb, dest / "hull.glb", "--tris", target, "--interior",
+                                       1 if interior else 0, "--compress", compress], timeout=3600)
+            if "error" in hull:
+                raise sc_stl.ConvertError(hull["error"])
+            # coque trop lourde pour le panel : on baisse la cible de triangles jusqu'a passer sous la limite
+            if not max_mb or hull["bytes"] <= max_mb * 1e6 or target <= 20000:
+                break
+            log(f"  coque {hull['bytes'] / 1e6:.1f} Mo > {max_mb:g} Mo : nouvel essai a {int(target * 0.6)} triangles")
+            target = int(target * 0.6)
         counts = collections.Counter(m["kind"] for m in markers)
         unclassified.pop("", None)
         lines = [f"Entite : {entity}", f"Noeuds dans le GLB : {len(scene.nodes)} "
@@ -411,23 +485,84 @@ def process(entity, outdir, p4k, lod=1, tris=150000, compress="draco", interior=
         shutil.rmtree(work, ignore_errors=True)
 
 
-def run_batch(entities, outdir, p4k, force=False, log=print, upload=None, **kw):
-    """upload : True / False, ou None = envoi au panel si une cle est reglee (config.json)."""
+UPLOAD_FLAG = "upload_ok.json"  # temoin : ce dossier a deja ete envoye au panel avec succes
+VARIANT_RE = re.compile(r"_display|_bis|_collector|_pir|_exec|_shop|template|_pu_ai|_test|_showdown|_teach|"
+                        r"_dummy|_fleetweek|_unmanned|_npc", re.IGNORECASE)
+
+
+def resolve_entity(name, p4k):
+    """Nom d'entite le plus proche (meme constructeur, hors variantes d'exposition / IA / gabarits), ou None."""
+    import difflib
+    emap = sc_stl.load_entity_map(p4k, sc_stl.cache_path(p4k, "entity_map.json"))
+    prefix = name.split("_", 1)[0].lower()
+    pool = sorted({e for es in emap.values() for e in es
+                   if e.lower().startswith(prefix + "_") and not VARIANT_RE.search(e)})
+    if not pool:
+        return None
+    best = max(pool, key=lambda e: difflib.SequenceMatcher(None, name.lower(), e.lower()).ratio())
+    return best if difflib.SequenceMatcher(None, name.lower(), best.lower()).ratio() >= 0.72 else None
+
+
+def _upload(dest, outdir, ent, log, r):
+    import sc_panel
+    good, detail = sc_panel.upload_dir(dest, log)
+    if r is not None:
+        r["upload"] = good
+    log(f"  panel : {'envoye' if good else 'ECHEC'} - {detail}")
+    if good:
+        (dest / UPLOAD_FLAG).write_text(json.dumps({"time": time.strftime("%Y-%m-%d %H:%M:%S"), "detail": detail}),
+                                        encoding="utf-8")
+    else:  # les fichiers restent sur le disque : renvoi possible plus tard avec "upload"
+        sc_panel.note_error(outdir, ent, f"envoi au panel : {detail}")
+    return good
+
+
+def run_batch(entities, outdir, p4k, force=False, log=print, upload=None, skip=(), resolve=False, **kw):
+    """upload : True / False, ou None = envoi au panel si une cle est reglee (config.json).
+    skip : entites a ne pas traiter (ex. deja sur le panel) ; resolve : chercher le bon nom si l'entite
+    n'existe pas (journal renommages.txt)."""
     import sc_panel
     outdir = Path(outdir)
     outdir.mkdir(parents=True, exist_ok=True)
     if upload is None:
         upload = sc_panel.enabled()
+    skip = {s.lower() for s in skip}
     done, failed, skipped = [], [], []
     for n, ent in enumerate(entities, 1):
+        tag = f"[{n}/{len(entities)}] {ent}"
         dest = outdir / sc_stl.safe_name(ent)
-        if not force and (dest / "markers.json").is_file() and (dest / "hull.glb").is_file():
+        exported = (dest / "markers.json").is_file() and (dest / "hull.glb").is_file()
+        if ent.lower() in skip:
             skipped.append(ent)
-            log(f"[{n}/{len(entities)}] {ent} : deja fait, saute")
+            log(f"{tag} : deja sur le panel, saute")
             continue
-        log(f"[{n}/{len(entities)}] {ent}")
+        if not force and exported and (not upload or (dest / UPLOAD_FLAG).is_file()):
+            skipped.append(ent)
+            log(f"{tag} : deja fait{' et envoye' if upload else ''}, saute")
+            continue
+        if not force and exported:  # exporte mais pas envoye : envoi seulement
+            log(f"{tag} : deja exporte, envoi seulement")
+            r = {"entity": ent, "dir": str(dest), "resent": True}
+            if _upload(dest, outdir, ent, log, r):
+                done.append(r)
+            else:
+                failed.append(ent)
+            continue
+        log(tag)
         try:
-            r = process(ent, outdir, p4k, log=log, **kw)
+            try:
+                r = process(ent, outdir, p4k, log=log, **kw)
+            except sc_stl.ConvertError as exc:
+                if not (resolve and "no EntityClassDefinition records" in str(exc)):
+                    raise
+                good = resolve_entity(ent, p4k)
+                if good is None:
+                    raise sc_stl.ConvertError(f"entite introuvable dans le jeu, aucun nom proche ({exc})")
+                with open(outdir / "renommages.txt", "a", encoding="utf-8") as f:
+                    f.write(f"{ent}\t->\t{good}\n")
+                log(f"  entite introuvable : '{good}' utilise a la place (renommages.txt)")
+                ent, dest = good, outdir / sc_stl.safe_name(good)
+                r = process(ent, outdir, p4k, log=log, **kw)
             done.append(r)
             log(f"  ok : {r['markers']} reperes, coque {r['hull_mb']} Mo, {r['seconds']} s")
         except Exception as exc:  # noqa: BLE001  un vaisseau qui echoue n'arrete pas le lot
@@ -436,11 +571,8 @@ def run_batch(entities, outdir, p4k, force=False, log=print, upload=None, **kw):
             log(f"  ECHEC : {exc}")
             continue
         if upload:  # envoi au panel juste apres l'export reussi
-            good, detail = sc_panel.upload_dir(dest, log)
-            r["upload"] = good
-            log(f"  panel : {'envoye' if good else 'ECHEC'} - {detail}")
-            if not good:
-                sc_panel.note_error(outdir, ent, f"envoi au panel : {detail}")
+            if not _upload(dest, outdir, ent, log, r):
+                failed.append(ent)
     return done, failed, skipped
 
 
@@ -492,6 +624,11 @@ def main(argv=None):
     ap.add_argument("--force", action="store_true", help="refaire les entites deja faites")
     ap.add_argument("--keep-glb", action="store_true", help="garder le GLB complet de StarBreaker")
     ap.add_argument("--p4k", default=None)
+    ap.add_argument("--skip", default="", help="entites a sauter, separees par des virgules (ex. deja sur le panel)")
+    ap.add_argument("--resolve", action="store_true",
+                    help="si une entite n'existe pas, utiliser le nom proche du meme constructeur (renommages.txt)")
+    ap.add_argument("--max-mb", type=float, default=None,
+                    help="taille maximale de hull.glb : baisse la cible de triangles jusqu'a passer dessous")
     up = ap.add_mutually_exclusive_group()
     up.add_argument("--upload", dest="upload", action="store_true", default=None,
                     help="envoyer au panel (par defaut : oui si panel_token est regle)")
@@ -503,7 +640,9 @@ def main(argv=None):
     ents = read_entities(a.entities)
     log = file_logger(a.out, "sc_markers.log")
     done, failed, skipped = run_batch(ents, a.out, p4k, force=a.force, log=log, upload=a.upload, lod=a.lod,
-                                      tris=a.tris, compress=a.compress, interior=a.interior, keep_glb=a.keep_glb)
+                                      tris=a.tris, compress=a.compress, interior=a.interior, keep_glb=a.keep_glb,
+                                      skip=[s.strip() for s in a.skip.split(",") if s.strip()],
+                                      resolve=a.resolve, max_mb=a.max_mb)
     log(f"Termine : {len(done)} faits, {len(skipped)} deja faits, {len(failed)} echecs"
         + (f" (voir {Path(a.out) / 'errors.log'})" if failed else ""))
     return 1 if failed else 0
