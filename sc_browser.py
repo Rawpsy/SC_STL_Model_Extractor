@@ -358,6 +358,7 @@ class App:
         self.convert_btn.pack(side="right")
         ttk.Button(bot, text="Apercu / reparer un STL...", command=self.open_preview).pack(side="right", padx=6)
         ttk.Button(bot, text="Preparer pour l'impression...", command=self.open_wizard).pack(side="right")
+        ttk.Button(bot, text="Reperes web...", command=self.export_markers).pack(side="right", padx=6)
         self.cancel_btn = ttk.Button(bot, text="Annuler la conversion", command=self.cancel_conversion,
                                      state="disabled")
         self.cancel_btn.pack(side="right")
@@ -1045,6 +1046,30 @@ class App:
         sc_stl.stop_all()
         self.tk.destroy()
 
+    def export_markers(self):
+        """Coque legere + reperes (markers.json) pour un viewer web, pour les vaisseaux et objets coches."""
+        import sc_markers
+        ents = sorted(self.ship_sel | self.obj_sel)
+        if not ents:
+            messagebox.showinfo("Reperes web", "Cochez un ou plusieurs vaisseaux (ou objets).")
+            return
+        out = filedialog.askdirectory(title="Dossier de sortie des reperes web")
+        if not out:
+            return
+        self.status.config(text=f"Reperes web : {len(ents)} element(s)...")
+        lod = int(self.lod_var.get())  # lu ici : Tkinter ne doit pas etre lu depuis le calcul
+
+        def work():
+            sc_stl.set_group("convert")
+            done, failed, skipped = sc_markers.run_batch(
+                ents, out, self.p4k_path, lod=lod,
+                log=lambda m: self.q.put(("status", "Reperes web : " + m.strip())))
+            msg = f"{len(done)} fait(s), {len(skipped)} deja fait(s), {len(failed)} echec(s) dans" + chr(10) + f"{out}"
+            if failed:
+                msg += chr(10) * 2 + "Echecs (voir errors.log) : " + ", ".join(failed[:6])
+            self.q.put(("done", msg))
+        threading.Thread(target=work, daemon=True).start()
+
     def open_wizard(self):
         """Assistant d'impression sur l'unique element coche (vaisseau, objet, lieu ou fichier)."""
         import sc_wizard
@@ -1261,6 +1286,9 @@ def self_check():
 
 
 def main():
+    if len(sys.argv) > 1 and sys.argv[1] == "markers":  # SC_Extractor.exe markers <entite|liste.txt> --out ...
+        import sc_markers
+        sys.exit(sc_markers.main(sys.argv[2:]))
     if "--check" in sys.argv:
         self_check()
         return

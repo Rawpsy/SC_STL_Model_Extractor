@@ -1059,6 +1059,98 @@ def glb2stl(args):
                                     "watertight": None, "damage_removed": len(dmg), "parts_removed": removed}))
 
 
+def webhull(args):
+    """Coque legere pour le web, a partir du GLB complet d'un vaisseau.
+
+    -- webhull IN.glb OUT.glb [--tris 150000] [--interior 0|1] [--compress draco|meshopt|none]
+    Toutes les pieces sont fusionnees en un seul maillage (transformations appliquees), sans materiaux
+    ni textures, puis decimees jusqu'au nombre de triangles vise. Repere glTF conserve (Y vers le haut,
+    metres) : les reperes de markers.json, lus dans le meme GLB, tombent donc au bon endroit.
+    """
+    import numpy as np
+    src, dst = os.path.abspath(args[0]), os.path.abspath(args[1])
+    target = int(opt(args, "--tris", 150000))
+    keep_interior = int(opt(args, "--interior", 0, int))
+    compress = args[args.index("--compress") + 1] if "--compress" in args else "draco"
+    progress(5, "import du GLB")
+    clear_scene()
+    bpy.ops.import_scene.gltf(filepath=src)
+    bpy.context.view_layer.update()
+
+    def skipped(o):  # interieur (conteneurs interior_*) et maillages d'etat endommage
+        while o is not None:
+            if (not keep_interior and o.name.lower().startswith("interior_")) or DMG_RE.search(o.name):
+                return True
+            o = o.parent
+        return False
+
+    progress(25, "fusion des pieces")
+    verts, tris, base = [], [], 0
+    for o in bpy.data.objects:
+        if o.type != "MESH" or skipped(o):
+            continue
+        me = o.data
+        me.calc_loop_triangles()
+        if not me.loop_triangles:
+            continue
+        co = np.empty(len(me.vertices) * 3, dtype=np.float64)
+        me.vertices.foreach_get("co", co)
+        co = co.reshape(-1, 3)
+        m = np.array(o.matrix_world, dtype=np.float64)
+        co = co @ m[:3, :3].T + m[:3, 3]
+        lt = np.empty(len(me.loop_triangles) * 3, dtype=np.int64)
+        me.loop_triangles.foreach_get("vertices", lt)
+        verts.append(co)
+        tris.append(lt.reshape(-1, 3) + base)
+        base += len(co)
+    if not verts:
+        print("RESULT: " + json.dumps({"error": "aucun maillage"}))
+        return
+    co, tr = np.vstack(verts), np.vstack(tris)
+    n_in = len(tr)
+    clear_scene()
+    me = bpy.data.meshes.new("coque")
+    me.vertices.add(len(co))
+    me.vertices.foreach_set("co", co.astype(np.float32).ravel())
+    me.loops.add(tr.size)
+    me.loops.foreach_set("vertex_index", tr.astype(np.int32).ravel())
+    me.polygons.add(len(tr))
+    me.polygons.foreach_set("loop_start", np.arange(0, tr.size, 3, dtype=np.int32))
+    me.update(calc_edges=True)
+    ob = bpy.data.objects.new("coque", me)
+    bpy.context.scene.collection.objects.link(ob)
+    bpy.context.view_layer.objects.active = ob
+    ob.select_set(True)
+    progress(45, "soudure des sommets")
+    bm = bmesh.new()
+    bm.from_mesh(me)
+    bmesh.ops.remove_doubles(bm, verts=bm.verts[:], dist=0.0005)  # 0,5 mm : recolle les pieces decoupees
+    bm.to_mesh(me)
+    bm.free()
+    if len(me.polygons) > target:
+        progress(60, f"decimation {len(me.polygons)} -> {target} triangles")
+        mod = ob.modifiers.new("decimate", "DECIMATE")
+        mod.decimate_type = "COLLAPSE"
+        mod.ratio = target / len(me.polygons)
+        mod.use_collapse_triangulate = True
+        bpy.ops.object.modifier_apply(modifier=mod.name)
+    me.calc_loop_triangles()
+    n_out = len(me.loop_triangles)
+    progress(85, f"export ({compress})")
+    kw = dict(filepath=dst, export_format="GLB", export_materials="NONE", export_texcoords=False,
+              export_normals=True, export_yup=True, export_apply=True, export_animations=False,
+              export_skins=False, export_morph=False, export_extras=False)
+    if compress == "draco":
+        kw.update(export_draco_mesh_compression_enable=True, export_draco_mesh_compression_level=7,
+                  export_draco_position_quantization=14, export_draco_normal_quantization=10)
+    elif compress == "meshopt":
+        kw.update(export_meshopt_compression_enable=True)
+    bpy.ops.export_scene.gltf(**kw)
+    lo, hi = co.min(axis=0), co.max(axis=0)
+    print("RESULT: " + json.dumps({"tris_in": n_in, "tris_out": n_out, "bytes": os.path.getsize(dst),
+                                    "compress": compress, "interior": bool(keep_interior)}))
+
+
 def main():
     a = argv()
     if not a:
@@ -1066,7 +1158,7 @@ def main():
         return
     {"repair": repair, "render": render, "glb2stl": glb2stl, "heatmap": heatmap, "probe": probe,
      "analyze": analyze, "precise": precise, "split": split, "hollow": hollow,
-     "turntable": turntable}[a[0]](a[1:])
+     "turntable": turntable, "webhull": webhull}[a[0]](a[1:])
 
 
 main()
