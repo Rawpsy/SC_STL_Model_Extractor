@@ -1,0 +1,1914 @@
+{
+ "entity": "DRAK_Vulture",
+ "units": "m",
+ "up": "y",
+ "bbox": [
+  [
+   -7.911,
+   -4.011,
+   -16.348
+  ],
+  [
+   7.91,
+   6.803,
+   16.697
+  ]
+ ],
+ "markers": [
+  {
+   "id": "weapon-001",
+   "kind": "weapon",
+   "name": "hardpoint_weapon_rack",
+   "item": "Weapon_Rack_DRAK_Vulture",
+   "size": null,
+   "pos": [
+    -1.499,
+    1.716,
+    7.719
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    0.567,
+    1.195,
+    0.373
+   ]
+  },
+  {
+   "id": "other-001",
+   "kind": "other",
+   "name": "hardpoint_fire_extinguisher",
+   "item": "Gadget_Cabinet_kegr_fire_extinguisher_NG_Flipped",
+   "size": null,
+   "pos": [
+    0.899,
+    1.502,
+    3.366
+   ],
+   "rot": [
+    -0.0,
+    0.70711,
+    0.70711,
+    -0.0
+   ],
+   "extent": [
+    0.03,
+    0.01,
+    0.025
+   ]
+  },
+  {
+   "id": "cooler-001",
+   "kind": "cooler",
+   "name": "hardpoint_cooler_left",
+   "item": "COOL_JUST_S01_Thermax_SCItem",
+   "size": 1,
+   "pos": [
+    -1.503,
+    2.074,
+    2.746
+   ],
+   "rot": [
+    0.70711,
+    -0.0,
+    0.70711,
+    0.0
+   ],
+   "extent": [
+    0.289,
+    0.462,
+    0.751
+   ]
+  },
+  {
+   "id": "cooler-002",
+   "kind": "cooler",
+   "name": "hardpoint_cooler_right",
+   "item": "COOL_JUST_S01_Thermax_SCItem",
+   "size": 1,
+   "pos": [
+    -1.508,
+    2.07,
+    3.894
+   ],
+   "rot": [
+    0.70711,
+    -0.0,
+    0.70711,
+    0.0
+   ],
+   "extent": [
+    0.289,
+    0.462,
+    0.751
+   ]
+  },
+  {
+   "id": "powerplant-001",
+   "kind": "powerplant",
+   "name": "hardpoint_power_plant_01",
+   "item": "POWR_JUST_S01_Fortitude_SCItem",
+   "size": 1,
+   "pos": [
+    -1.619,
+    1.174,
+    3.897
+   ],
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "extent": [
+    0.495,
+    0.459,
+    0.739
+   ]
+  },
+  {
+   "id": "powerplant-002",
+   "kind": "powerplant",
+   "name": "hardpoint_power_plant_02",
+   "item": "POWR_JUST_S01_Fortitude_SCItem",
+   "size": 1,
+   "pos": [
+    -1.613,
+    1.174,
+    2.738
+   ],
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "extent": [
+    0.495,
+    0.459,
+    0.739
+   ]
+  },
+  {
+   "id": "quantum-001",
+   "kind": "quantum",
+   "name": "hardpoint_quantum_drive",
+   "item": "QDRV_JUST_S01_Goliath_SCItem",
+   "size": 1,
+   "pos": [
+    -0.274,
+    2.009,
+    8.225
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    0.75,
+    0.743,
+    0.502
+   ]
+  },
+  {
+   "id": "bed-001",
+   "kind": "bed",
+   "name": "hardpoint_bed_hab",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.421,
+    0.488,
+    4.589
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ]
+  },
+  {
+   "id": "other-002",
+   "kind": "other",
+   "name": "hardpoint_personal_storage",
+   "item": "PersonalStorage_DRAK_Vulture",
+   "size": null,
+   "pos": [
+    1.235,
+    0.607,
+    4.223
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    0.554,
+    0.143,
+    0.975
+   ]
+  },
+  {
+   "id": "other-003",
+   "kind": "other",
+   "name": "hardpoint_landing_gear_rear_left",
+   "item": "DRAK_Vulture_Landing_Gear.cdf",
+   "size": null,
+   "pos": [
+    -3.323,
+    -2.593,
+    9.469
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    3.251,
+    2.836,
+    3.304
+   ]
+  },
+  {
+   "id": "other-004",
+   "kind": "other",
+   "name": "hardpoint_landing_gear_rear_right",
+   "item": "DRAK_Vulture_Landing_Gear.cdf",
+   "size": null,
+   "pos": [
+    3.323,
+    -2.593,
+    9.469
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    1.185,
+    2.836,
+    3.304
+   ]
+  },
+  {
+   "id": "other-005",
+   "kind": "other",
+   "name": "hardpoint_cm_launcher_left",
+   "item": "DRAK_Vulture_CML_Flare",
+   "size": null,
+   "pos": [
+    -2.707,
+    0.233,
+    16.395
+   ],
+   "rot": [
+    -0.0,
+    0.70711,
+    0.70711,
+    -0.0
+   ],
+   "extent": [
+    0.204,
+    0.204,
+    0.199
+   ]
+  },
+  {
+   "id": "other-006",
+   "kind": "other",
+   "name": "hardpoint_cm_launcher_right",
+   "item": "DRAK_Vulture_CML_Chaff",
+   "size": null,
+   "pos": [
+    2.707,
+    0.233,
+    16.395
+   ],
+   "rot": [
+    -0.0,
+    0.70711,
+    0.70711,
+    -0.0
+   ],
+   "extent": [
+    0.204,
+    0.204,
+    0.199
+   ]
+  },
+  {
+   "id": "cargo-001",
+   "kind": "cargo",
+   "name": "hardpoint_int_cargo",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.0,
+    -1.052,
+    9.324
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    0.0,
+    0.70711
+   ]
+  },
+  {
+   "id": "door-001",
+   "kind": "door",
+   "name": "hardpoint_door_cargo",
+   "item": "Door_RN_RoomConnector_Breachable_OpenReverse_IP_Vulture_Ramp",
+   "size": null,
+   "pos": [
+    0.0,
+    -1.12,
+    15.328
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    5.13,
+    3.577,
+    2.165
+   ]
+  },
+  {
+   "id": "cargo-002",
+   "kind": "cargo",
+   "name": "hardpoint_cargogrid_main",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.655,
+    -2.645,
+    12.656
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ]
+  },
+  {
+   "id": "other-007",
+   "kind": "other",
+   "name": "hardpoint_thruster_vtol_rear_left",
+   "item": "DRAK_Vulture_Thruster_VTOL",
+   "size": null,
+   "pos": [
+    -2.225,
+    -3.357,
+    13.667
+   ],
+   "rot": [
+    0.0,
+    -0.0,
+    0.0,
+    1.0
+   ],
+   "extent": [
+    0.375,
+    0.259,
+    1.599
+   ]
+  },
+  {
+   "id": "other-008",
+   "kind": "other",
+   "name": "hardpoint_thruster_vtol_rear_right",
+   "item": "DRAK_Vulture_Thruster_VTOL",
+   "size": null,
+   "pos": [
+    2.233,
+    -3.356,
+    13.664
+   ],
+   "rot": [
+    -0.0,
+    -0.0,
+    0.0,
+    1.0
+   ],
+   "extent": [
+    0.375,
+    0.259,
+    1.599
+   ]
+  },
+  {
+   "id": "other-009",
+   "kind": "other",
+   "name": "hardpoint_thruster_mav_rear_bottom_left",
+   "item": "DRAK_Vulture_Thruster_Maneuver_Bottom",
+   "size": null,
+   "pos": [
+    -3.174,
+    -2.86,
+    12.075
+   ],
+   "rot": [
+    0.0,
+    -0.0,
+    0.0,
+    1.0
+   ],
+   "extent": [
+    0.571,
+    0.272,
+    0.571
+   ]
+  },
+  {
+   "id": "other-010",
+   "kind": "other",
+   "name": "hardpoint_thruster_mav_rear_top_left",
+   "item": "DRAK_Vulture_Thruster_Maneuver_Top",
+   "size": null,
+   "pos": [
+    -3.423,
+    0.667,
+    15.053
+   ],
+   "rot": [
+    1.0,
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "extent": [
+    0.571,
+    0.272,
+    0.571
+   ]
+  },
+  {
+   "id": "other-011",
+   "kind": "other",
+   "name": "hardpoint_thruster_mav_rear_side_left",
+   "item": "DRAK_Vulture_Thruster_Maneuver",
+   "size": null,
+   "pos": [
+    -4.053,
+    0.072,
+    15.053
+   ],
+   "rot": [
+    0.70711,
+    0.70711,
+    0.0,
+    -0.0
+   ],
+   "extent": [
+    0.272,
+    0.571,
+    0.571
+   ]
+  },
+  {
+   "id": "other-012",
+   "kind": "other",
+   "name": "hardpoint_thruster_mav_rear_top_right",
+   "item": "DRAK_Vulture_Thruster_Maneuver_Top",
+   "size": null,
+   "pos": [
+    3.423,
+    0.667,
+    15.053
+   ],
+   "rot": [
+    1.0,
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "extent": [
+    0.571,
+    0.272,
+    0.571
+   ]
+  },
+  {
+   "id": "other-013",
+   "kind": "other",
+   "name": "hardpoint_thruster_mav_rear_side_right",
+   "item": "DRAK_Vulture_Thruster_Maneuver",
+   "size": null,
+   "pos": [
+    4.053,
+    0.072,
+    15.053
+   ],
+   "rot": [
+    0.70711,
+    -0.70711,
+    -0.0,
+    -0.0
+   ],
+   "extent": [
+    0.272,
+    0.571,
+    0.571
+   ]
+  },
+  {
+   "id": "other-014",
+   "kind": "other",
+   "name": "hardpoint_thruster_mav_rear_bottom_right",
+   "item": "DRAK_Vulture_Thruster_Maneuver_Bottom",
+   "size": null,
+   "pos": [
+    3.174,
+    -2.86,
+    12.075
+   ],
+   "rot": [
+    0.0,
+    -0.0,
+    0.0,
+    1.0
+   ],
+   "extent": [
+    0.571,
+    0.272,
+    0.571
+   ]
+  },
+  {
+   "id": "shield-001",
+   "kind": "shield",
+   "name": "hardpoint_shield_generator_left",
+   "item": null,
+   "size": null,
+   "pos": [
+    2.45,
+    -1.362,
+    11.564
+   ],
+   "rot": [
+    0.0,
+    -0.70711,
+    -0.0,
+    0.70711
+   ]
+  },
+  {
+   "id": "shield-002",
+   "kind": "shield",
+   "name": "hardpoint_shield_generator_right",
+   "item": null,
+   "size": null,
+   "pos": [
+    2.45,
+    -0.992,
+    11.564
+   ],
+   "rot": [
+    0.0,
+    -0.70711,
+    -0.0,
+    0.70711
+   ]
+  },
+  {
+   "id": "other-015",
+   "kind": "other",
+   "name": "hardpoint_refill_station",
+   "item": "SalvageFillerStation_DRAK_Vulture",
+   "size": null,
+   "pos": [
+    -1.141,
+    -1.128,
+    7.889
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    2.54,
+    3.136,
+    3.218
+   ]
+  },
+  {
+   "id": "door-002",
+   "kind": "door",
+   "name": "hardpoint_door_cargo_panel_left",
+   "item": "ControlPanel_Screen_DoorControl_Physical_Vulture_Cargo_Ext",
+   "size": null,
+   "pos": [
+    2.757,
+    -2.157,
+    15.675
+   ],
+   "rot": [
+    -0.51768,
+    0.23563,
+    0.20322,
+    0.79699
+   ],
+   "extent": [
+    0.216,
+    0.296,
+    0.24
+   ]
+  },
+  {
+   "id": "door-003",
+   "kind": "door",
+   "name": "hardpoint_door_cargo_panel_right",
+   "item": "ControlPanel_Screen_DoorControl_Physical_Vulture_Cargo_Ext",
+   "size": null,
+   "pos": [
+    -2.751,
+    -2.164,
+    15.668
+   ],
+   "rot": [
+    -0.5226,
+    -0.23583,
+    -0.2019,
+    0.79405
+   ],
+   "extent": [
+    0.204,
+    0.281,
+    0.224
+   ]
+  },
+  {
+   "id": "other-016",
+   "kind": "other",
+   "name": "hardpoint_thruster_main_right",
+   "item": "DRAK_Vulture_Thruster_Main",
+   "size": null,
+   "pos": [
+    6.45,
+    -0.975,
+    13.115
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    2.064,
+    2.05,
+    1.701
+   ]
+  },
+  {
+   "id": "other-017",
+   "kind": "other",
+   "name": "hardpoint_thruster_retro_right",
+   "item": "DRAK_Vulture_Thruster_Retro",
+   "size": null,
+   "pos": [
+    6.454,
+    -0.028,
+    8.33
+   ],
+   "rot": [
+    -0.0,
+    0.70711,
+    0.70711,
+    0.0
+   ],
+   "extent": [
+    2.379,
+    0.73,
+    0.973
+   ]
+  },
+  {
+   "id": "other-018",
+   "kind": "other",
+   "name": "hardpoint_thruster_main_left",
+   "item": "DRAK_Vulture_Thruster_Main",
+   "size": null,
+   "pos": [
+    -6.45,
+    -0.51,
+    13.162
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    2.064,
+    2.981,
+    1.795
+   ]
+  },
+  {
+   "id": "other-019",
+   "kind": "other",
+   "name": "hardpoint_thruster_retro_left",
+   "item": "DRAK_Vulture_Thruster_Retro",
+   "size": null,
+   "pos": [
+    -6.446,
+    -0.028,
+    8.33
+   ],
+   "rot": [
+    -0.0,
+    0.70711,
+    0.70711,
+    0.0
+   ],
+   "extent": [
+    2.379,
+    0.73,
+    0.973
+   ]
+  },
+  {
+   "id": "other-020",
+   "kind": "other",
+   "name": "hardpoint_landing_gear_front_left",
+   "item": "DRAK_Vulture_Landing_Gear.cdf",
+   "size": null,
+   "pos": [
+    -4.878,
+    -2.593,
+    -4.159
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    3.251,
+    2.836,
+    3.304
+   ]
+  },
+  {
+   "id": "other-021",
+   "kind": "other",
+   "name": "hardpoint_thruster_mav_front_bottom_left",
+   "item": "DRAK_Vulture_Thruster_Maneuver_Bottom",
+   "size": null,
+   "pos": [
+    -5.083,
+    -2.981,
+    -13.754
+   ],
+   "rot": [
+    -0.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "extent": [
+    0.571,
+    0.272,
+    0.571
+   ]
+  },
+  {
+   "id": "other-022",
+   "kind": "other",
+   "name": "hardpoint_thruster_mav_front_side_left",
+   "item": "DRAK_Vulture_Thruster_Maneuver",
+   "size": null,
+   "pos": [
+    -6.16,
+    -1.517,
+    -13.757
+   ],
+   "rot": [
+    -0.0,
+    0.0,
+    -0.70711,
+    0.70711
+   ],
+   "extent": [
+    0.272,
+    0.571,
+    0.571
+   ]
+  },
+  {
+   "id": "other-023",
+   "kind": "other",
+   "name": "hardpoint_thruster_mav_front_top_left",
+   "item": "DRAK_Vulture_Thruster_Maneuver_Top",
+   "size": null,
+   "pos": [
+    -4.656,
+    -0.255,
+    -13.76
+   ],
+   "rot": [
+    1.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "extent": [
+    0.571,
+    0.272,
+    0.571
+   ]
+  },
+  {
+   "id": "seat-001",
+   "kind": "seat",
+   "name": "hardpoint_seataccess_ladder",
+   "item": "DRAK_Vulture_SCItem_SeatAccess_Ladder",
+   "size": null,
+   "pos": [
+    -4.927,
+    -0.325,
+    0.701
+   ],
+   "rot": [
+    -0.70711,
+    -3e-05,
+    -3e-05,
+    0.70711
+   ]
+  },
+  {
+   "id": "other-024",
+   "kind": "other",
+   "name": "hardpoint_salvage_arm_left",
+   "item": "DRAK_Vulture_Salvage_Arm_Left",
+   "size": null,
+   "pos": [
+    -4.279,
+    -1.755,
+    -14.312
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    2.837,
+    1.371,
+    4.042
+   ]
+  },
+  {
+   "id": "other-025",
+   "kind": "other",
+   "name": "hardpoint_thruster_vtol_front_left",
+   "item": "DRAK_Vulture_Thruster_VTOL",
+   "size": null,
+   "pos": [
+    -5.511,
+    -1.776,
+    -1.016
+   ],
+   "rot": [
+    -0.0,
+    -0.0,
+    0.0,
+    1.0
+   ],
+   "extent": [
+    0.954,
+    2.777,
+    1.863
+   ]
+  },
+  {
+   "id": "other-026",
+   "kind": "other",
+   "name": "hardpoint_landing_gear_front_right",
+   "item": "DRAK_Vulture_Landing_Gear.cdf",
+   "size": null,
+   "pos": [
+    4.879,
+    -2.593,
+    -3.307
+   ],
+   "rot": [
+    -0.0,
+    0.70711,
+    0.70711,
+    0.0
+   ],
+   "extent": [
+    3.251,
+    2.836,
+    3.304
+   ]
+  },
+  {
+   "id": "other-027",
+   "kind": "other",
+   "name": "hardpoint_thruster_mav_front_top_right",
+   "item": "DRAK_Vulture_Thruster_Maneuver_Top",
+   "size": null,
+   "pos": [
+    4.64,
+    -0.254,
+    -13.759
+   ],
+   "rot": [
+    1.0,
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "extent": [
+    0.571,
+    0.272,
+    0.571
+   ]
+  },
+  {
+   "id": "other-028",
+   "kind": "other",
+   "name": "hardpoint_thruster_mav_front_side_right",
+   "item": "DRAK_Vulture_Thruster_Maneuver",
+   "size": null,
+   "pos": [
+    6.159,
+    -1.524,
+    -13.756
+   ],
+   "rot": [
+    -0.70711,
+    0.70711,
+    -0.0,
+    0.0
+   ],
+   "extent": [
+    0.272,
+    0.571,
+    0.571
+   ]
+  },
+  {
+   "id": "other-029",
+   "kind": "other",
+   "name": "hardpoint_thruster_mav_front_bottom_right",
+   "item": "DRAK_Vulture_Thruster_Maneuver_Bottom",
+   "size": null,
+   "pos": [
+    5.073,
+    -2.982,
+    -13.754
+   ],
+   "rot": [
+    0.0,
+    1.0,
+    -0.0,
+    0.0
+   ],
+   "extent": [
+    0.571,
+    0.272,
+    0.571
+   ]
+  },
+  {
+   "id": "other-030",
+   "kind": "other",
+   "name": "hardpoint_salvage_arm_right",
+   "item": "DRAK_Vulture_Salvage_Arm_Right",
+   "size": null,
+   "pos": [
+    4.381,
+    -1.754,
+    -14.312
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    2.632,
+    1.37,
+    4.042
+   ]
+  },
+  {
+   "id": "other-031",
+   "kind": "other",
+   "name": "hardpoint_thruster_vtol_front_right",
+   "item": "DRAK_Vulture_Thruster_VTOL",
+   "size": null,
+   "pos": [
+    5.513,
+    -1.682,
+    -1.016
+   ],
+   "rot": [
+    -0.0,
+    -0.0,
+    0.0,
+    1.0
+   ],
+   "extent": [
+    0.954,
+    2.777,
+    1.863
+   ]
+  },
+  {
+   "id": "weapon-002",
+   "kind": "weapon",
+   "name": "hardpoint_weapon_nose_left",
+   "item": "Mount_Gimbal_S1",
+   "size": 1,
+   "pos": [
+    -3.445,
+    1.895,
+    1.242
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    0.221,
+    0.51,
+    1.688
+   ]
+  },
+  {
+   "id": "weapon-003",
+   "kind": "weapon",
+   "name": "hardpoint_weapon_nose_right",
+   "item": "Mount_Gimbal_S1",
+   "size": 1,
+   "pos": [
+    3.45,
+    1.895,
+    1.276
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    0.211,
+    0.51,
+    1.619
+   ]
+  },
+  {
+   "id": "seat-002",
+   "kind": "seat",
+   "name": "hardpoint_seataccess_pilot",
+   "item": "DRAK_Vulture_SCItem_SeatAccess_Pilot",
+   "size": null,
+   "pos": [
+    0.056,
+    0.462,
+    -0.594
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ]
+  },
+  {
+   "id": "seat-003",
+   "kind": "seat",
+   "name": "hardpoint_seat_pilot",
+   "item": "DRAK_Vulture_SCItem_Seat_Pilot",
+   "size": null,
+   "pos": [
+    0.0,
+    1.479,
+    -0.819
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    1.586,
+    1.946,
+    1.653
+   ]
+  },
+  {
+   "id": "other-032",
+   "kind": "other",
+   "name": "tail_main_engine_bridge",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.0,
+    -0.552,
+    10.922
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    15.822,
+    3.065,
+    6.39
+   ]
+  },
+  {
+   "id": "door-004",
+   "kind": "door",
+   "name": "grinder_box_door_secondary",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.009,
+    -0.731,
+    -0.854
+   ],
+   "rot": [
+    -0.84339,
+    -0.0,
+    -0.0,
+    0.5373
+   ],
+   "extent": [
+    2.927,
+    0.578,
+    0.487
+   ]
+  },
+  {
+   "id": "door-005",
+   "kind": "door",
+   "name": "grinder_box_door",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.0,
+    -1.732,
+    -0.692
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    3.907,
+    2.163,
+    0.481
+   ]
+  },
+  {
+   "id": "ladder-001",
+   "kind": "ladder",
+   "name": "exterior_ladder_top",
+   "item": null,
+   "size": null,
+   "pos": [
+    -6.397,
+    -0.888,
+    0.684
+   ],
+   "rot": [
+    -0.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "extent": [
+    0.317,
+    1.395,
+    0.781
+   ]
+  },
+  {
+   "id": "door-006",
+   "kind": "door",
+   "name": "cockpit_door",
+   "item": null,
+   "size": null,
+   "pos": [
+    -1.029,
+    1.546,
+    -0.877
+   ],
+   "rot": [
+    -0.70106,
+    -0.0923,
+    -0.0923,
+    0.70106
+   ],
+   "extent": [
+    0.902,
+    1.979,
+    1.918
+   ]
+  },
+  {
+   "id": "other-033",
+   "kind": "other",
+   "name": "hardpoint_int_hab",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.0,
+    0.292,
+    5.982
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ]
+  },
+  {
+   "id": "other-034",
+   "kind": "other",
+   "name": "hardpoint_int_cockpit",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.0,
+    1.529,
+    -0.182
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    0.0,
+    0.70711
+   ]
+  },
+  {
+   "id": "other-035",
+   "kind": "other",
+   "name": "hardpoint_cockpit_selfdestruct",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.0,
+    1.529,
+    -0.182
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ]
+  },
+  {
+   "id": "other-036",
+   "kind": "other",
+   "name": "hardpoint_cockpit_flair",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.084,
+    2.304,
+    -1.565
+   ],
+   "rot": [
+    -0.0,
+    0.70711,
+    0.70711,
+    -0.0
+   ]
+  },
+  {
+   "id": "other-037",
+   "kind": "other",
+   "name": "hardpoint_cockpit_flair_hang",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.767,
+    2.08,
+    -1.513
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ]
+  },
+  {
+   "id": "terminal-001",
+   "kind": "terminal",
+   "name": "control_compacter_monitor",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.416,
+    -1.086,
+    9.236
+   ],
+   "rot": [
+    -0.65328,
+    0.2706,
+    0.2706,
+    0.65328
+   ],
+   "extent": [
+    0.254,
+    0.383,
+    0.254
+   ]
+  },
+  {
+   "id": "terminal-002",
+   "kind": "terminal",
+   "name": "Salvage_Fillerstation_Screen_Template",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.416,
+    -1.086,
+    9.236
+   ],
+   "rot": [
+    -0.65328,
+    0.2706,
+    0.2706,
+    0.65328
+   ],
+   "extent": [
+    0.254,
+    0.383,
+    0.254
+   ]
+  },
+  {
+   "id": "other-038",
+   "kind": "other",
+   "name": "drak_vulture_interior_cockpit",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.136,
+    1.305,
+    -6.142
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    2.888,
+    2.342,
+    3.591
+   ]
+  },
+  {
+   "id": "other-039",
+   "kind": "other",
+   "name": "drak_vulture_interior_hab",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.236,
+    0.773,
+    -0.56
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    5.004,
+    3.85,
+    7.897
+   ]
+  },
+  {
+   "id": "door-007",
+   "kind": "door",
+   "name": "DRAK_Vulture_Control_Door_Wall",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.289,
+    1.466,
+    -4.615
+   ],
+   "rot": [
+    0.2706,
+    0.65328,
+    0.65328,
+    -0.2706
+   ],
+   "extent": [
+    0.119,
+    0.236,
+    0.119
+   ]
+  },
+  {
+   "id": "door-008",
+   "kind": "door",
+   "name": "DRAK_Vulture_Door_Interior",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.305,
+    1.225,
+    -4.436
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    1.23,
+    2.039,
+    0.165
+   ]
+  },
+  {
+   "id": "door-009",
+   "kind": "door",
+   "name": "DRAK_Vulture_Door_Bathroom",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.994,
+    1.414,
+    -3.644
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    0.014,
+    0.04,
+    0.0
+   ]
+  },
+  {
+   "id": "seat-004",
+   "kind": "seat",
+   "name": "DRAK_Vulture_Toilet_Seat",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.895,
+    0.99,
+    -3.21
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    0.281,
+    0.7,
+    0.732
+   ]
+  },
+  {
+   "id": "door-010",
+   "kind": "door",
+   "name": "DRAK_Vulture_Control_Door_Wall_Locked",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.289,
+    1.466,
+    -4.26
+   ],
+   "rot": [
+    -0.6579,
+    -0.25916,
+    -0.25916,
+    0.6579
+   ],
+   "extent": [
+    0.121,
+    0.236,
+    0.116
+   ]
+  },
+  {
+   "id": "door-011",
+   "kind": "door",
+   "name": "DRAK_Vulture_Door_Interior",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.475,
+    1.215,
+    0.213
+   ],
+   "rot": [
+    0.0,
+    0.70711,
+    0.70711,
+    0.0
+   ],
+   "extent": [
+    1.23,
+    2.039,
+    0.165
+   ]
+  },
+  {
+   "id": "door-012",
+   "kind": "door",
+   "name": "DRAK_Vulture_Control_Door_Wall_Locked",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.172,
+    1.466,
+    -0.043
+   ],
+   "rot": [
+    0.14702,
+    0.69165,
+    0.69165,
+    -0.14702
+   ],
+   "extent": [
+    0.134,
+    0.236,
+    0.088
+   ]
+  },
+  {
+   "id": "bed-002",
+   "kind": "bed",
+   "name": "DRAK_Vulture_Bed_Single",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.575,
+    0.665,
+    -1.368
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    1.234,
+    1.071,
+    2.562
+   ]
+  },
+  {
+   "id": "door-013",
+   "kind": "door",
+   "name": "DRAK_Vulture_Control_Door_Wall_Locked",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.288,
+    1.464,
+    0.425
+   ],
+   "rot": [
+    -0.65562,
+    -0.26489,
+    -0.26489,
+    0.65562
+   ],
+   "extent": [
+    0.12,
+    0.236,
+    0.118
+   ]
+  },
+  {
+   "id": "door-014",
+   "kind": "door",
+   "name": "DRAK_Vulture_Control_Door_Wall",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.279,
+    1.758,
+    1.346
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    0.129,
+    0.236,
+    0.039
+   ]
+  },
+  {
+   "id": "door-015",
+   "kind": "door",
+   "name": "DRAK_Vulture_Control_Door_Wall",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.278,
+    1.758,
+    1.722
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    0.129,
+    0.236,
+    0.039
+   ]
+  },
+  {
+   "id": "door-016",
+   "kind": "door",
+   "name": "DRAK_Vulture_Control_Door_Wall",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.167,
+    1.758,
+    5.915
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    0.129,
+    0.236,
+    0.039
+   ]
+  },
+  {
+   "id": "door-017",
+   "kind": "door",
+   "name": "DRAK_Vulture_Control_Door_Wall",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.278,
+    1.756,
+    6.407
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    0.129,
+    0.236,
+    0.039
+   ]
+  },
+  {
+   "id": "door-018",
+   "kind": "door",
+   "name": "DRAK_Vulture_Control_Door_Wall_Locked",
+   "item": null,
+   "size": null,
+   "pos": [
+    -2.192,
+    -0.147,
+    5.159
+   ],
+   "rot": [
+    -0.5,
+    0.5,
+    0.5,
+    0.5
+   ],
+   "extent": [
+    0.039,
+    0.236,
+    0.129
+   ]
+  },
+  {
+   "id": "door-019",
+   "kind": "door",
+   "name": "DRAK_Vulture_Door_Interior",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.188,
+    -0.453,
+    -1.443
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    1.23,
+    2.039,
+    0.165
+   ]
+  },
+  {
+   "id": "door-020",
+   "kind": "door",
+   "name": "DRAK_Vulture_Control_Door_Wall_Locked",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.923,
+    -0.132,
+    -1.219
+   ],
+   "rot": [
+    -0.65328,
+    -0.2706,
+    -0.2706,
+    0.65328
+   ],
+   "extent": [
+    0.119,
+    0.236,
+    0.119
+   ]
+  },
+  {
+   "id": "door-021",
+   "kind": "door",
+   "name": "DRAK_Vulture_Control_Door_Wall_Locked",
+   "item": null,
+   "size": null,
+   "pos": [
+    2.213,
+    -0.147,
+    5.066
+   ],
+   "rot": [
+    0.49562,
+    0.50434,
+    0.50434,
+    -0.49562
+   ],
+   "extent": [
+    0.041,
+    0.236,
+    0.13
+   ]
+  },
+  {
+   "id": "door-022",
+   "kind": "door",
+   "name": "DRAK_Vulture_Control_Door_Wall_Locked",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.832,
+    -0.133,
+    -1.66
+   ],
+   "rot": [
+    0.2706,
+    0.65328,
+    0.65328,
+    -0.2706
+   ],
+   "extent": [
+    0.119,
+    0.236,
+    0.119
+   ]
+  },
+  {
+   "id": "ladder-002",
+   "kind": "ladder",
+   "name": "drak_vulture_interior_hallway_ladder",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.722,
+    0.008,
+    -2.327
+   ],
+   "rot": [
+    -0.5,
+    -0.5,
+    -0.5,
+    0.5
+   ],
+   "extent": [
+    0.215,
+    3.17,
+    0.6
+   ]
+  },
+  {
+   "id": "door-023",
+   "kind": "door",
+   "name": "DRAK_Vulture_Control_Door_Wall_Locked",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.912,
+    -1.184,
+    8.104
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    0.129,
+    0.236,
+    0.039
+   ]
+  },
+  {
+   "id": "door-024",
+   "kind": "door",
+   "name": "DRAK_Vulture_Control_Door_Wall",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.822,
+    -1.185,
+    7.642
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    0.129,
+    0.236,
+    0.039
+   ]
+  }
+ ]
+}

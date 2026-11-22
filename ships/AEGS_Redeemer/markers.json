@@ -1,0 +1,2788 @@
+{
+ "entity": "AEGS_Redeemer",
+ "units": "m",
+ "up": "y",
+ "bbox": [
+  [
+   -14.476,
+   -19.608,
+   -22.386
+  ],
+  [
+   14.476,
+   18.502,
+   28.398
+  ]
+ ],
+ "markers": [
+  {
+   "id": "turret-001",
+   "kind": "turret",
+   "name": "hardpoint_turret_manned_rear",
+   "item": "AEGS_Redeemer_Rear_SCItem_Turret",
+   "size": null,
+   "pos": [
+    -0.068,
+    4.972,
+    2.859
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    5.821,
+    6.801,
+    8.055
+   ]
+  },
+  {
+   "id": "other-001",
+   "kind": "other",
+   "name": "hardpoint_thruster_mid_top_right",
+   "item": "AEGS_Redeemer_Thruster_Mav",
+   "size": null,
+   "pos": [
+    4.748,
+    2.795,
+    8.16
+   ],
+   "rot": [
+    0.65328,
+    -0.2706,
+    -0.65328,
+    -0.2706
+   ],
+   "extent": [
+    0.949,
+    0.949,
+    0.728
+   ]
+  },
+  {
+   "id": "other-002",
+   "kind": "other",
+   "name": "hardpoint_thruster_mid_top_left",
+   "item": "AEGS_Redeemer_Thruster_Mav",
+   "size": null,
+   "pos": [
+    -4.748,
+    2.795,
+    8.161
+   ],
+   "rot": [
+    0.65328,
+    0.2706,
+    0.65328,
+    -0.2706
+   ],
+   "extent": [
+    0.949,
+    0.949,
+    0.728
+   ]
+  },
+  {
+   "id": "cooler-001",
+   "kind": "cooler",
+   "name": "hardpoint_cooler",
+   "item": "COOL_AEGS_S03_Blizzard_SCItem",
+   "size": 3,
+   "pos": [
+    2.133,
+    0.597,
+    5.443
+   ],
+   "rot": [
+    0.70711,
+    0.0,
+    -0.70711,
+    -0.0
+   ],
+   "extent": [
+    1.018,
+    2.076,
+    3.0
+   ]
+  },
+  {
+   "id": "powerplant-001",
+   "kind": "powerplant",
+   "name": "hardpoint_power_plant",
+   "item": "POWR_AEGS_S03_Centurion_SCItem",
+   "size": 3,
+   "pos": [
+    -2.67,
+    0.584,
+    5.444
+   ],
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "extent": [
+    1.975,
+    2.008,
+    3.022
+   ]
+  },
+  {
+   "id": "quantum-001",
+   "kind": "quantum",
+   "name": "hardpoint_quantum_drive",
+   "item": "QDRV_WETK_S02_Crossfield_SCItem",
+   "size": 2,
+   "pos": [
+    -0.02,
+    0.596,
+    8.488
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    1.554,
+    1.502,
+    1.036
+   ]
+  },
+  {
+   "id": "shield-001",
+   "kind": "shield",
+   "name": "hardpoint_shield_generator_l",
+   "item": null,
+   "size": null,
+   "pos": [
+    2.625,
+    1.102,
+    1.658
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    0.70711,
+    -0.0
+   ]
+  },
+  {
+   "id": "ramp-001",
+   "kind": "ramp",
+   "name": "hardpoint_ramp",
+   "item": "Door_RN_RoomConnector_Breachable_OpenClose_IP_Redeemer",
+   "size": null,
+   "pos": [
+    0.0,
+    -2.825,
+    6.983
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    3.031,
+    5.923,
+    7.218
+   ]
+  },
+  {
+   "id": "other-003",
+   "kind": "other",
+   "name": "hardpoint_thruster_mid_botom_left",
+   "item": "AEGS_Redeemer_Thruster_Mav",
+   "size": null,
+   "pos": [
+    -4.61,
+    -1.558,
+    6.356
+   ],
+   "rot": [
+    -0.2706,
+    -0.65328,
+    -0.2706,
+    0.65328
+   ],
+   "extent": [
+    0.949,
+    0.949,
+    0.728
+   ]
+  },
+  {
+   "id": "other-004",
+   "kind": "other",
+   "name": "hardpoint_thruster_mid_bottom_right",
+   "item": "AEGS_Redeemer_Thruster_Mav",
+   "size": null,
+   "pos": [
+    4.61,
+    -1.558,
+    6.355
+   ],
+   "rot": [
+    -0.2706,
+    0.65328,
+    0.2706,
+    0.65328
+   ],
+   "extent": [
+    0.949,
+    0.949,
+    0.728
+   ]
+  },
+  {
+   "id": "other-005",
+   "kind": "other",
+   "name": "hardpoint_thruster_rear_main_right",
+   "item": "AEGS_Redeemer_Thruster_Main_Right",
+   "size": null,
+   "pos": [
+    3.5,
+    1.278,
+    9.954
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    2.527,
+    4.151,
+    3.203
+   ]
+  },
+  {
+   "id": "other-006",
+   "kind": "other",
+   "name": "hardpoint_thruster_rear_main_left",
+   "item": "AEGS_Redeemer_Thruster_Main_Left",
+   "size": null,
+   "pos": [
+    -3.5,
+    1.278,
+    9.954
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    2.527,
+    4.151,
+    3.203
+   ]
+  },
+  {
+   "id": "other-007",
+   "kind": "other",
+   "name": "hardpoint_weaponlocker",
+   "item": "Weapon_Rack_AEGS_Redeemer",
+   "size": null,
+   "pos": [
+    -1.763,
+    0.639,
+    -4.778
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    0.618,
+    1.677,
+    1.035
+   ]
+  },
+  {
+   "id": "bed-001",
+   "kind": "bed",
+   "name": "hardpoint_esc_pod_lower_left",
+   "item": "AEGS_Redeemer_SCItem_Seat_Bed_Lower_Left",
+   "size": null,
+   "pos": [
+    -2.276,
+    -3.43,
+    -2.512
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    1.132,
+    1.588,
+    2.911
+   ]
+  },
+  {
+   "id": "bed-002",
+   "kind": "bed",
+   "name": "hardpoint_esc_pod_lower_right",
+   "item": "AEGS_Redeemer_SCItem_Seat_Bed_Lower_Right",
+   "size": null,
+   "pos": [
+    1.906,
+    -3.487,
+    -2.507
+   ],
+   "rot": [
+    0.0,
+    0.70711,
+    0.70711,
+    -0.0
+   ],
+   "extent": [
+    1.682,
+    2.353,
+    2.509
+   ]
+  },
+  {
+   "id": "bed-003",
+   "kind": "bed",
+   "name": "hardpoint_esc_pod_upper_left",
+   "item": "AEGS_Redeemer_SCItem_Seat_Bed_Upper_Left",
+   "size": null,
+   "pos": [
+    -1.906,
+    -2.385,
+    -2.495
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    0.763,
+    2.621,
+    2.506
+   ]
+  },
+  {
+   "id": "bed-004",
+   "kind": "bed",
+   "name": "hardpoint_esc_pod_upper_right",
+   "item": "AEGS_Redeemer_SCItem_Seat_Bed_Upper_Right",
+   "size": null,
+   "pos": [
+    1.906,
+    -2.369,
+    -2.507
+   ],
+   "rot": [
+    0.0,
+    0.70711,
+    0.70711,
+    -0.0
+   ],
+   "extent": [
+    1.682,
+    2.589,
+    2.509
+   ]
+  },
+  {
+   "id": "cargo-001",
+   "kind": "cargo",
+   "name": "hardpoint_cargogrid",
+   "item": null,
+   "size": null,
+   "pos": [
+    -2.3,
+    -3.7,
+    0.875
+   ],
+   "rot": [
+    -0.5,
+    -0.5,
+    -0.5,
+    0.5
+   ]
+  },
+  {
+   "id": "shield-002",
+   "kind": "shield",
+   "name": "hardpoint_shield_generator_r",
+   "item": null,
+   "size": null,
+   "pos": [
+    2.625,
+    0.072,
+    1.658
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    0.70711,
+    -0.0
+   ]
+  },
+  {
+   "id": "other-008",
+   "kind": "other",
+   "name": "hardpoint_landing_gear_rear_right",
+   "item": "Aegs_Redeemer_LG_Rear_Right.cdf",
+   "size": null,
+   "pos": [
+    3.84,
+    -4.058,
+    4.764
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    4.551,
+    6.023,
+    4.553
+   ]
+  },
+  {
+   "id": "other-009",
+   "kind": "other",
+   "name": "hardpoint_landing_gear_rear_left",
+   "item": "Aegs_Redeemer_LG_Rear_Left.cdf",
+   "size": null,
+   "pos": [
+    -3.355,
+    -4.067,
+    4.745
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    5.689,
+    5.958,
+    4.566
+   ]
+  },
+  {
+   "id": "other-010",
+   "kind": "other",
+   "name": "hardpoint_landing_gear_front_right",
+   "item": "Aegs_Redeemer_LG_Front_Right.cdf",
+   "size": null,
+   "pos": [
+    1.949,
+    -4.934,
+    -7.094
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    3.427,
+    3.523,
+    1.588
+   ]
+  },
+  {
+   "id": "other-011",
+   "kind": "other",
+   "name": "hardpoint_landing_gear_front_left",
+   "item": "Aegs_Redeemer_LG_Front_Left.cdf",
+   "size": null,
+   "pos": [
+    -1.943,
+    -4.934,
+    -7.085
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    3.415,
+    3.524,
+    1.417
+   ]
+  },
+  {
+   "id": "other-012",
+   "kind": "other",
+   "name": "hardpoint_storage_1",
+   "item": "PersonalStorage_Redeemer_01",
+   "size": null,
+   "pos": [
+    -2.046,
+    -2.531,
+    -4.194
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    1.396,
+    2.688,
+    3.004
+   ]
+  },
+  {
+   "id": "other-013",
+   "kind": "other",
+   "name": "hardpoint_storage_2",
+   "item": "PersonalStorage_Redeemer_02",
+   "size": null,
+   "pos": [
+    -2.046,
+    -2.531,
+    -3.444
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    1.396,
+    2.688,
+    3.004
+   ]
+  },
+  {
+   "id": "other-014",
+   "kind": "other",
+   "name": "hardpoint_storage_3",
+   "item": "PersonalStorage_Redeemer_03",
+   "size": null,
+   "pos": [
+    -2.046,
+    -2.531,
+    0.806
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    1.396,
+    2.688,
+    3.004
+   ]
+  },
+  {
+   "id": "other-015",
+   "kind": "other",
+   "name": "hardpoint_storage_4",
+   "item": "PersonalStorage_Redeemer_04",
+   "size": null,
+   "pos": [
+    2.046,
+    -2.531,
+    -0.375
+   ],
+   "rot": [
+    0.0,
+    0.70711,
+    0.70711,
+    -0.0
+   ],
+   "extent": [
+    1.396,
+    2.688,
+    0.641
+   ]
+  },
+  {
+   "id": "other-016",
+   "kind": "other",
+   "name": "hardpoint_thruster_rear_side_right",
+   "item": "AEGS_Redeemer_Thruster_Mav_Fixed",
+   "size": null,
+   "pos": [
+    1.642,
+    4.992,
+    21.316
+   ],
+   "rot": [
+    -0.51079,
+    0.51079,
+    0.48897,
+    0.48897
+   ],
+   "extent": [
+    0.382,
+    0.484,
+    2.091
+   ]
+  },
+  {
+   "id": "other-017",
+   "kind": "other",
+   "name": "hardpoint_thruster_rear_side_left",
+   "item": "AEGS_Redeemer_Thruster_Mav_Fixed",
+   "size": null,
+   "pos": [
+    -1.642,
+    4.992,
+    21.316
+   ],
+   "rot": [
+    0.51079,
+    0.51079,
+    0.48897,
+    -0.48897
+   ],
+   "extent": [
+    0.382,
+    0.484,
+    2.091
+   ]
+  },
+  {
+   "id": "other-018",
+   "kind": "other",
+   "name": "hardpoint_countermeasures_right",
+   "item": "JOKR_Defcon_CML_Chaff",
+   "size": null,
+   "pos": [
+    1.243,
+    4.849,
+    24.397
+   ],
+   "rot": [
+    0.70711,
+    0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    0.204,
+    0.204,
+    0.199
+   ]
+  },
+  {
+   "id": "other-019",
+   "kind": "other",
+   "name": "hardpoint_countermeasures_left",
+   "item": "JOKR_Defcon_CML_Flare",
+   "size": null,
+   "pos": [
+    -1.243,
+    4.849,
+    24.397
+   ],
+   "rot": [
+    0.70711,
+    0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    0.204,
+    0.204,
+    0.199
+   ]
+  },
+  {
+   "id": "turret-002",
+   "kind": "turret",
+   "name": "hardpoint_turret_remote_rear",
+   "item": "AEGS_Redeemer_SCItem_Remote_Turret_Rear",
+   "size": null,
+   "pos": [
+    -0.32,
+    3.195,
+    17.127
+   ],
+   "rot": [
+    0.0,
+    0.70711,
+    0.70711,
+    -0.0
+   ],
+   "extent": [
+    2.243,
+    1.756,
+    4.643
+   ]
+  },
+  {
+   "id": "weapon-001",
+   "kind": "weapon",
+   "name": "hardpoint_weapon_gun_left",
+   "item": "Mount_Gimbal_S4",
+   "size": 4,
+   "pos": [
+    -6.998,
+    -2.624,
+    -1.652
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    0.68,
+    1.43,
+    4.497
+   ]
+  },
+  {
+   "id": "other-020",
+   "kind": "other",
+   "name": "hardpoint_thruster_retro_left",
+   "item": "AEGS_Redeemer_Thruster_Retro",
+   "size": null,
+   "pos": [
+    -5.005,
+    -0.376,
+    -6.755
+   ],
+   "rot": [
+    -0.0,
+    0.70711,
+    0.70711,
+    0.0
+   ],
+   "extent": [
+    2.313,
+    1.271,
+    3.368
+   ]
+  },
+  {
+   "id": "missile-001",
+   "kind": "missile",
+   "name": "hardpoint_missilerack_wing_left",
+   "item": "MRCK_S04_AEGS_Redeemer",
+   "size": 4,
+   "pos": [
+    -5.105,
+    -0.648,
+    -2.916
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    2.271,
+    1.309,
+    4.031
+   ]
+  },
+  {
+   "id": "other-021",
+   "kind": "other",
+   "name": "hardpoint_thruster_wing_bottom_main_left",
+   "item": "AEGS_Redeemer_Thruster_Nutcracker",
+   "size": null,
+   "pos": [
+    -11.553,
+    -9.818,
+    5.456
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    -0.0,
+    0.70711
+   ],
+   "extent": [
+    5.847,
+    19.58,
+    19.461
+   ]
+  },
+  {
+   "id": "other-022",
+   "kind": "other",
+   "name": "hardpoint_thruster_wing_top_main_left",
+   "item": "AEGS_Redeemer_Thruster_Nutcracker",
+   "size": null,
+   "pos": [
+    -8.183,
+    8.713,
+    5.456
+   ],
+   "rot": [
+    -0.0,
+    -0.70711,
+    0.70711,
+    -0.0
+   ],
+   "extent": [
+    5.847,
+    19.58,
+    19.461
+   ]
+  },
+  {
+   "id": "other-023",
+   "kind": "other",
+   "name": "hardpoint_thruster_retro_right",
+   "item": "AEGS_Redeemer_Thruster_Retro",
+   "size": null,
+   "pos": [
+    5.005,
+    -0.376,
+    -6.755
+   ],
+   "rot": [
+    -0.0,
+    0.70711,
+    0.70711,
+    0.0
+   ],
+   "extent": [
+    2.313,
+    1.271,
+    3.368
+   ]
+  },
+  {
+   "id": "weapon-002",
+   "kind": "weapon",
+   "name": "hardpoint_weapon_gun_right",
+   "item": "Mount_Gimbal_S4",
+   "size": 4,
+   "pos": [
+    6.998,
+    -2.112,
+    -2.336
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    0.68,
+    2.453,
+    5.866
+   ]
+  },
+  {
+   "id": "missile-002",
+   "kind": "missile",
+   "name": "hardpoint_missilerack_wing_right",
+   "item": "MRCK_S04_AEGS_Redeemer",
+   "size": 4,
+   "pos": [
+    5.115,
+    -1.061,
+    -2.991
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    2.147,
+    0.39,
+    3.883
+   ]
+  },
+  {
+   "id": "other-024",
+   "kind": "other",
+   "name": "hardpoint_thruster_wing_top_main_right",
+   "item": "AEGS_Redeemer_Thruster_Nutcracker",
+   "size": null,
+   "pos": [
+    10.152,
+    8.713,
+    5.436
+   ],
+   "rot": [
+    -0.0,
+    -0.70711,
+    0.70711,
+    0.0
+   ],
+   "extent": [
+    8.648,
+    19.58,
+    19.421
+   ]
+  },
+  {
+   "id": "other-025",
+   "kind": "other",
+   "name": "hardpoint_thruster_wing_bottom_main_right",
+   "item": "AEGS_Redeemer_Thruster_Nutcracker",
+   "size": null,
+   "pos": [
+    9.867,
+    -2.831,
+    5.436
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    8.935,
+    4.973,
+    19.421
+   ]
+  },
+  {
+   "id": "terminal-001",
+   "kind": "terminal",
+   "name": "hardpoint_dashboard_pilot",
+   "item": "AEGS_Redeemer_SCItem_Dashboard_Pilot",
+   "size": null,
+   "pos": [
+    -0.0,
+    0.064,
+    -19.796
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    1.111,
+    1.138,
+    0.967
+   ]
+  },
+  {
+   "id": "seat-001",
+   "kind": "seat",
+   "name": "hardpoint_seat_pilot",
+   "item": "AEGS_Redeemer_SCItem_Seat_Pilot",
+   "size": null,
+   "pos": [
+    -0.0,
+    0.292,
+    -18.044
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    0.761,
+    1.637,
+    1.117
+   ]
+  },
+  {
+   "id": "other-026",
+   "kind": "other",
+   "name": "hardpoint_thruster_front_bottom_left",
+   "item": "AEGS_Redeemer_Thruster_Mav",
+   "size": null,
+   "pos": [
+    -1.52,
+    -1.588,
+    -17.68
+   ],
+   "rot": [
+    -0.2706,
+    -0.65328,
+    -0.2706,
+    0.65328
+   ],
+   "extent": [
+    0.949,
+    0.949,
+    0.728
+   ]
+  },
+  {
+   "id": "other-027",
+   "kind": "other",
+   "name": "hardpoint_thruster_front_bottom_right",
+   "item": "AEGS_Redeemer_Thruster_Mav",
+   "size": null,
+   "pos": [
+    1.52,
+    -1.588,
+    -17.68
+   ],
+   "rot": [
+    -0.2706,
+    0.65328,
+    0.2706,
+    0.65328
+   ],
+   "extent": [
+    0.949,
+    0.949,
+    0.728
+   ]
+  },
+  {
+   "id": "other-028",
+   "kind": "other",
+   "name": "hardpoint_thruster_front_top_left",
+   "item": "AEGS_Redeemer_Thruster_Mav",
+   "size": null,
+   "pos": [
+    -1.988,
+    0.373,
+    -17.058
+   ],
+   "rot": [
+    0.56242,
+    0.3036,
+    0.73296,
+    -0.23296
+   ],
+   "extent": [
+    1.105,
+    0.949,
+    0.949
+   ]
+  },
+  {
+   "id": "other-029",
+   "kind": "other",
+   "name": "hardpoint_thruster_front_top_right",
+   "item": "AEGS_Redeemer_Thruster_Mav",
+   "size": null,
+   "pos": [
+    1.988,
+    0.373,
+    -17.059
+   ],
+   "rot": [
+    -0.56242,
+    0.3036,
+    0.73296,
+    0.23296
+   ],
+   "extent": [
+    1.105,
+    0.949,
+    0.949
+   ]
+  },
+  {
+   "id": "turret-003",
+   "kind": "turret",
+   "name": "hardpoint_turret_manned_front",
+   "item": "AEGS_Redeemer_Front_SCItem_Turret",
+   "size": null,
+   "pos": [
+    -0.068,
+    -3.278,
+    -12.891
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    5.821,
+    6.346,
+    8.055
+   ]
+  },
+  {
+   "id": "turret-004",
+   "kind": "turret",
+   "name": "hardpoint_turret_remote_front",
+   "item": "AEGS_Redeemer_SCItem_Remote_Turret_Front",
+   "size": null,
+   "pos": [
+    -0.001,
+    -2.67,
+    -19.555
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    2.601,
+    1.664,
+    4.644
+   ]
+  },
+  {
+   "id": "seat-002",
+   "kind": "seat",
+   "name": "hardpoint_turret_remote_front_seat",
+   "item": "AEGS_Redeemer_SCItem_Support_Seat_Front",
+   "size": null,
+   "pos": [
+    -1.382,
+    -0.41,
+    -14.899
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    1.182,
+    1.816,
+    1.544
+   ]
+  },
+  {
+   "id": "seat-003",
+   "kind": "seat",
+   "name": "hardpoint_turret_remote_rear_seat",
+   "item": "AEGS_Redeemer_SCItem_Support_Seat_Rear",
+   "size": null,
+   "pos": [
+    1.382,
+    -0.463,
+    -14.84
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    1.182,
+    1.923,
+    1.426
+   ]
+  },
+  {
+   "id": "other-030",
+   "kind": "other",
+   "name": "cockpit_canopy_glass",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.0,
+    0.684,
+    -19.762
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    2.374,
+    1.978,
+    3.232
+   ]
+  },
+  {
+   "id": "other-031",
+   "kind": "other",
+   "name": "hardpoint_cockpit_flair",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.149,
+    0.405,
+    -20.3
+   ],
+   "rot": [
+    0.0,
+    0.70711,
+    0.70711,
+    -0.0
+   ]
+  },
+  {
+   "id": "other-032",
+   "kind": "other",
+   "name": "hardpoint_cockpit_flair_hang",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.224,
+    1.139,
+    -19.536
+   ],
+   "rot": [
+    -0.70711,
+    -0.0,
+    0.0,
+    0.70711
+   ]
+  },
+  {
+   "id": "door-001",
+   "kind": "door",
+   "name": "AEGS_Redeemer_Door_Components",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.0,
+    1.409,
+    12.451
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "extent": [
+    2.506,
+    2.898,
+    3.142
+   ]
+  },
+  {
+   "id": "other-033",
+   "kind": "other",
+   "name": "hardpoint_cockpit_selfDestruct",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.087,
+    -0.909,
+    -19.5
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ]
+  },
+  {
+   "id": "door-002",
+   "kind": "door",
+   "name": "aegs_redeemer_door_internal",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.0,
+    0.598,
+    -0.686
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "habitation",
+   "extent": [
+    4.391,
+    2.285,
+    0.5
+   ]
+  },
+  {
+   "id": "ladder-001",
+   "kind": "ladder",
+   "name": "aegs_redeemer_laddershaft",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.0,
+    0.825,
+    -3.326
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "armoury",
+   "extent": [
+    3.892,
+    2.951,
+    4.46
+   ]
+  },
+  {
+   "id": "seat-004",
+   "kind": "seat",
+   "name": "aegs_redeemer_turret_room_seat_bh",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.002,
+    -0.223,
+    -15.155
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "bridge",
+   "extent": [
+    4.009,
+    3.474,
+    2.561
+   ]
+  },
+  {
+   "id": "terminal-002",
+   "kind": "terminal",
+   "name": "ui_screen_16x9_a",
+   "item": null,
+   "size": null,
+   "pos": [
+    -1.029,
+    1.681,
+    7.322
+   ],
+   "rot": [
+    -0.24598,
+    0.70773,
+    0.59386,
+    0.29315
+   ],
+   "room": "ui",
+   "extent": [
+    0.381,
+    0.272,
+    0.381
+   ]
+  },
+  {
+   "id": "terminal-003",
+   "kind": "terminal",
+   "name": "ui_screen_16x9_a",
+   "item": null,
+   "size": null,
+   "pos": [
+    -1.029,
+    1.309,
+    7.322
+   ],
+   "rot": [
+    -0.2706,
+    0.65328,
+    0.65328,
+    0.2706
+   ],
+   "room": "ui",
+   "extent": [
+    0.335,
+    0.267,
+    0.335
+   ]
+  },
+  {
+   "id": "terminal-004",
+   "kind": "terminal",
+   "name": "aegs_redeemer_monitor",
+   "item": null,
+   "size": null,
+   "pos": [
+    -1.08,
+    1.671,
+    7.33
+   ],
+   "rot": [
+    0.92036,
+    -0.03335,
+    0.38123,
+    0.08052
+   ],
+   "room": "component_room",
+   "extent": [
+    0.592,
+    0.403,
+    0.592
+   ]
+  },
+  {
+   "id": "terminal-005",
+   "kind": "terminal",
+   "name": "ui_screen_16x9_a",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.016,
+    1.649,
+    2.449
+   ],
+   "rot": [
+    0.0,
+    0.86603,
+    0.5,
+    0.0
+   ],
+   "room": "ui",
+   "extent": [
+    0.191,
+    0.093,
+    0.054
+   ]
+  },
+  {
+   "id": "terminal-006",
+   "kind": "terminal",
+   "name": "aegs_redeemer_monitor",
+   "item": null,
+   "size": null,
+   "pos": [
+    -1.079,
+    1.29,
+    7.329
+   ],
+   "rot": [
+    0.92388,
+    -0.0,
+    0.38268,
+    0.0
+   ],
+   "room": "component_room",
+   "extent": [
+    0.546,
+    0.386,
+    0.546
+   ]
+  },
+  {
+   "id": "bed-005",
+   "kind": "bed",
+   "name": "aegs_redeemer_bed_frame",
+   "item": null,
+   "size": null,
+   "pos": [
+    -1.635,
+    -2.511,
+    -2.512
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "habitation",
+   "extent": [
+    0.153,
+    2.824,
+    3.191
+   ]
+  },
+  {
+   "id": "bed-006",
+   "kind": "bed",
+   "name": "aegs_redeemer_bed_frame",
+   "item": null,
+   "size": null,
+   "pos": [
+    -1.656,
+    -2.642,
+    -2.441
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "habitation",
+   "extent": [
+    0.003,
+    0.083,
+    1.377
+   ]
+  },
+  {
+   "id": "ladder-002",
+   "kind": "ladder",
+   "name": "aegs_redeemer_ladder_bottom_wall",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.345,
+    -2.483,
+    -5.023
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "habitation",
+   "extent": [
+    0.441,
+    2.682,
+    1.783
+   ]
+  },
+  {
+   "id": "door-003",
+   "kind": "door",
+   "name": "aegs_redeemer_door_internal",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.0,
+    -2.652,
+    2.439
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "habitation",
+   "extent": [
+    4.391,
+    2.285,
+    0.5
+   ]
+  },
+  {
+   "id": "ladder-003",
+   "kind": "ladder",
+   "name": "aegs_redeemer_ladder_middle",
+   "item": null,
+   "size": null,
+   "pos": [
+    2.069,
+    -0.934,
+    -4.856
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "habitation",
+   "extent": [
+    1.359,
+    0.91,
+    3.088
+   ]
+  },
+  {
+   "id": "ladder-004",
+   "kind": "ladder",
+   "name": "aegs_redeemer_ladder_bottom",
+   "item": null,
+   "size": null,
+   "pos": [
+    2.1,
+    -2.493,
+    -5.017
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "habitation",
+   "extent": [
+    1.309,
+    2.631,
+    1.79
+   ]
+  },
+  {
+   "id": "ladder-005",
+   "kind": "ladder",
+   "name": "aegs_redeemer_ladder_top",
+   "item": null,
+   "size": null,
+   "pos": [
+    2.148,
+    0.608,
+    -4.958
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "habitation",
+   "extent": [
+    1.213,
+    2.308,
+    1.679
+   ]
+  },
+  {
+   "id": "terminal-007",
+   "kind": "terminal",
+   "name": "ui_screen_16x9_a",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.329,
+    -0.184,
+    -11.119
+   ],
+   "rot": [
+    0.61279,
+    0.35282,
+    0.61279,
+    -0.35282
+   ],
+   "room": "ui",
+   "extent": [
+    0.054,
+    0.093,
+    0.192
+   ]
+  },
+  {
+   "id": "terminal-008",
+   "kind": "terminal",
+   "name": "ui_screen_16x9_a",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.617,
+    -0.232,
+    -10.364
+   ],
+   "rot": [
+    0.83652,
+    0.12941,
+    0.48296,
+    -0.22414
+   ],
+   "room": "ui",
+   "extent": [
+    0.472,
+    0.144,
+    0.568
+   ]
+  },
+  {
+   "id": "terminal-009",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_ui",
+   "item": null,
+   "size": null,
+   "pos": [
+    -1.253,
+    0.977,
+    -1.016
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "habitation",
+   "extent": [
+    0.109,
+    0.194,
+    0.0
+   ]
+  },
+  {
+   "id": "terminal-010",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_a",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.869,
+    -2.29,
+    0.223
+   ],
+   "rot": [
+    0.0,
+    0.70711,
+    0.70711,
+    0.0
+   ],
+   "room": "habitation",
+   "extent": [
+    0.231,
+    0.386,
+    0.032
+   ]
+  },
+  {
+   "id": "terminal-011",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_a",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.87,
+    -2.267,
+    0.217
+   ],
+   "rot": [
+    0.0,
+    0.70711,
+    0.70711,
+    0.0
+   ],
+   "room": "habitation",
+   "extent": [
+    0.109,
+    0.194,
+    0.0
+   ]
+  },
+  {
+   "id": "terminal-012",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_a",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.881,
+    -0.034,
+    -14.012
+   ],
+   "rot": [
+    -0.5,
+    -0.5,
+    -0.5,
+    0.5
+   ],
+   "room": "habitation",
+   "extent": [
+    0.032,
+    0.386,
+    0.231
+   ]
+  },
+  {
+   "id": "door-004",
+   "kind": "door",
+   "name": "aegs_redeemer_avionics_door",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.79,
+    0.313,
+    -16.915
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "bridge",
+   "extent": [
+    0.043,
+    1.155,
+    0.491
+   ]
+  },
+  {
+   "id": "terminal-013",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_a",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.896,
+    -0.012,
+    -14.013
+   ],
+   "rot": [
+    -0.5,
+    -0.5,
+    -0.5,
+    0.5
+   ],
+   "room": "habitation",
+   "extent": [
+    0.0,
+    0.194,
+    0.109
+   ]
+  },
+  {
+   "id": "door-005",
+   "kind": "door",
+   "name": "aegs_redeemer_jumpdrive_door",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.0,
+    0.649,
+    7.748
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "component_room",
+   "extent": [
+    1.905,
+    2.951,
+    0.424
+   ]
+  },
+  {
+   "id": "terminal-014",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_ui",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.254,
+    0.978,
+    -0.36
+   ],
+   "rot": [
+    0.0,
+    0.70711,
+    0.70711,
+    0.0
+   ],
+   "room": "habitation",
+   "extent": [
+    0.109,
+    0.194,
+    0.0
+   ]
+  },
+  {
+   "id": "door-006",
+   "kind": "door",
+   "name": "aegs_redeemer_door_double",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.001,
+    0.634,
+    -0.689
+   ],
+   "rot": [
+    0.0,
+    0.70711,
+    0.70711,
+    0.0
+   ],
+   "room": "habitation",
+   "extent": [
+    2.13,
+    2.295,
+    0.5
+   ]
+  },
+  {
+   "id": "terminal-015",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_a",
+   "item": null,
+   "size": null,
+   "pos": [
+    -1.499,
+    -2.252,
+    3.397
+   ],
+   "rot": [
+    -0.5,
+    -0.5,
+    -0.5,
+    0.5
+   ],
+   "room": "habitation",
+   "extent": [
+    0.032,
+    0.386,
+    0.231
+   ]
+  },
+  {
+   "id": "door-007",
+   "kind": "door",
+   "name": "aegs_redeemer_bathroom_door",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.599,
+    -2.535,
+    0.782
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "habitation",
+   "extent": [
+    0.043,
+    2.06,
+    0.998
+   ]
+  },
+  {
+   "id": "door-008",
+   "kind": "door",
+   "name": "aegs_redeemer_door_internal",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.001,
+    -2.616,
+    2.439
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "habitation",
+   "extent": [
+    2.13,
+    2.295,
+    0.5
+   ]
+  },
+  {
+   "id": "terminal-016",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_ui",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.254,
+    -2.276,
+    2.767
+   ],
+   "rot": [
+    0.0,
+    0.70711,
+    0.70711,
+    0.0
+   ],
+   "room": "habitation",
+   "extent": [
+    0.109,
+    0.194,
+    0.0
+   ]
+  },
+  {
+   "id": "terminal-017",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_a",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.361,
+    -2.318,
+    -5.689
+   ],
+   "rot": [
+    -0.5,
+    0.5,
+    0.5,
+    0.5
+   ],
+   "room": "habitation",
+   "extent": [
+    0.032,
+    0.386,
+    0.231
+   ]
+  },
+  {
+   "id": "terminal-018",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_ui_small",
+   "item": null,
+   "size": null,
+   "pos": [
+    -2.755,
+    -2.867,
+    -1.799
+   ],
+   "rot": [
+    0.0,
+    0.0,
+    -0.70711,
+    0.70711
+   ],
+   "room": "habitation",
+   "extent": [
+    0.0,
+    0.082,
+    0.145
+   ]
+  },
+  {
+   "id": "terminal-019",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_ui_small",
+   "item": null,
+   "size": null,
+   "pos": [
+    -2.753,
+    -1.867,
+    -1.805
+   ],
+   "rot": [
+    0.0,
+    0.0,
+    -0.70711,
+    0.70711
+   ],
+   "room": "habitation",
+   "extent": [
+    0.0,
+    0.082,
+    0.145
+   ]
+  },
+  {
+   "id": "terminal-020",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_ui_small",
+   "item": null,
+   "size": null,
+   "pos": [
+    2.755,
+    -2.867,
+    -3.196
+   ],
+   "rot": [
+    0.70711,
+    -0.70711,
+    0.0,
+    0.0
+   ],
+   "room": "habitation",
+   "extent": [
+    0.0,
+    0.082,
+    0.145
+   ]
+  },
+  {
+   "id": "terminal-021",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_ui_small",
+   "item": null,
+   "size": null,
+   "pos": [
+    2.755,
+    -1.866,
+    -3.198
+   ],
+   "rot": [
+    0.70711,
+    -0.70711,
+    0.0,
+    0.0
+   ],
+   "room": "habitation",
+   "extent": [
+    0.0,
+    0.082,
+    0.145
+   ]
+  },
+  {
+   "id": "terminal-022",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_a",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.372,
+    -2.294,
+    -5.689
+   ],
+   "rot": [
+    -0.5,
+    0.5,
+    0.5,
+    0.5
+   ],
+   "room": "habitation",
+   "extent": [
+    0.0,
+    0.194,
+    0.109
+   ]
+  },
+  {
+   "id": "ladder-006",
+   "kind": "ladder",
+   "name": "aegs_redeemer_ladder_door",
+   "item": null,
+   "size": null,
+   "pos": [
+    2.079,
+    -0.618,
+    -4.85
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "habitation",
+   "extent": [
+    1.214,
+    0.132,
+    1.222
+   ]
+  },
+  {
+   "id": "door-009",
+   "kind": "door",
+   "name": "aegs_redeemer_kitchen_door_right",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.411,
+    -3.123,
+    -6.075
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "habitation",
+   "extent": [
+    0.841,
+    0.598,
+    0.021
+   ]
+  },
+  {
+   "id": "terminal-023",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_ui",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.536,
+    -2.273,
+    1.433
+   ],
+   "rot": [
+    -0.5,
+    0.5,
+    0.5,
+    0.5
+   ],
+   "room": "habitation",
+   "extent": [
+    0.0,
+    0.194,
+    0.109
+   ]
+  },
+  {
+   "id": "terminal-024",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_ui",
+   "item": null,
+   "size": null,
+   "pos": [
+    -1.253,
+    -2.273,
+    2.111
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "habitation",
+   "extent": [
+    0.109,
+    0.194,
+    0.0
+   ]
+  },
+  {
+   "id": "ladder-007",
+   "kind": "ladder",
+   "name": "aegs_redeemer_bottom_ladder",
+   "item": null,
+   "size": null,
+   "pos": [
+    2.077,
+    -1.992,
+    -5.363
+   ],
+   "rot": [
+    0.0,
+    0.70711,
+    0.70711,
+    0.0
+   ],
+   "room": "habitation",
+   "extent": [
+    0.651,
+    2.616,
+    0.129
+   ]
+  },
+  {
+   "id": "door-010",
+   "kind": "door",
+   "name": "aegs_redeemer_kitchen_door_left",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.409,
+    -3.125,
+    -6.053
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "habitation",
+   "extent": [
+    0.841,
+    0.598,
+    0.021
+   ]
+  },
+  {
+   "id": "terminal-025",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_a",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.647,
+    0.956,
+    -5.804
+   ],
+   "rot": [
+    -0.5,
+    0.5,
+    0.5,
+    0.5
+   ],
+   "room": "habitation",
+   "extent": [
+    0.032,
+    0.386,
+    0.231
+   ]
+  },
+  {
+   "id": "terminal-026",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_ui",
+   "item": null,
+   "size": null,
+   "pos": [
+    -1.979,
+    0.838,
+    -6.668
+   ],
+   "rot": [
+    -0.5,
+    -0.5,
+    -0.5,
+    0.5
+   ],
+   "room": "habitation",
+   "extent": [
+    0.0,
+    0.194,
+    0.109
+   ]
+  },
+  {
+   "id": "door-011",
+   "kind": "door",
+   "name": "aegs_redeemer_grav_gen_door",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.214,
+    0.759,
+    -7.226
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "turret_room",
+   "extent": [
+    2.429,
+    2.82,
+    2.041
+   ]
+  },
+  {
+   "id": "terminal-027",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_ui",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.97,
+    0.839,
+    -7.803
+   ],
+   "rot": [
+    -0.5,
+    0.5,
+    0.5,
+    0.5
+   ],
+   "room": "habitation",
+   "extent": [
+    0.0,
+    0.194,
+    0.109
+   ]
+  },
+  {
+   "id": "terminal-028",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_a",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.654,
+    0.979,
+    -5.804
+   ],
+   "rot": [
+    -0.5,
+    0.5,
+    0.5,
+    0.5
+   ],
+   "room": "habitation",
+   "extent": [
+    0.0,
+    0.194,
+    0.109
+   ]
+  },
+  {
+   "id": "terminal-029",
+   "kind": "terminal",
+   "name": "CRUS_Starlifter_EngineeringScreen",
+   "item": null,
+   "size": null,
+   "pos": [
+    -1.664,
+    -0.216,
+    -10.328
+   ],
+   "rot": [
+    0.12941,
+    0.83652,
+    0.22414,
+    -0.48296
+   ],
+   "room": "bridge",
+   "extent": [
+    0.516,
+    0.158,
+    0.621
+   ]
+  },
+  {
+   "id": "door-012",
+   "kind": "door",
+   "name": "aegs_redeemer_life_supp_door",
+   "item": null,
+   "size": null,
+   "pos": [
+    -1.214,
+    0.759,
+    -7.249
+   ],
+   "rot": [
+    -0.70711,
+    0.0,
+    0.0,
+    0.70711
+   ],
+   "room": "turret_room",
+   "extent": [
+    2.429,
+    2.82,
+    2.04
+   ]
+  },
+  {
+   "id": "terminal-030",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_ui",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.375,
+    0.733,
+    0.227
+   ],
+   "rot": [
+    -0.50001,
+    0.49999,
+    0.49999,
+    0.50001
+   ],
+   "room": "habitation",
+   "extent": [
+    0.0,
+    0.194,
+    0.109
+   ]
+  },
+  {
+   "id": "terminal-031",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_ui",
+   "item": null,
+   "size": null,
+   "pos": [
+    1.378,
+    0.734,
+    4.061
+   ],
+   "rot": [
+    -0.50001,
+    0.49999,
+    0.49999,
+    0.50001
+   ],
+   "room": "habitation",
+   "extent": [
+    0.0,
+    0.194,
+    0.109
+   ]
+  },
+  {
+   "id": "terminal-032",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_ui",
+   "item": null,
+   "size": null,
+   "pos": [
+    -1.38,
+    0.733,
+    6.821
+   ],
+   "rot": [
+    -0.5,
+    -0.5,
+    -0.5,
+    0.5
+   ],
+   "room": "habitation",
+   "extent": [
+    0.0,
+    0.194,
+    0.109
+   ]
+  },
+  {
+   "id": "terminal-033",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_ui",
+   "item": null,
+   "size": null,
+   "pos": [
+    -1.38,
+    0.735,
+    3.086
+   ],
+   "rot": [
+    -0.50001,
+    -0.49999,
+    -0.49999,
+    0.50001
+   ],
+   "room": "habitation",
+   "extent": [
+    0.0,
+    0.194,
+    0.109
+   ]
+  },
+  {
+   "id": "terminal-034",
+   "kind": "terminal",
+   "name": "aegs_redeemer_controlpanel_ui",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.645,
+    0.733,
+    7.726
+   ],
+   "rot": [
+    -0.70711,
+    -1e-05,
+    -1e-05,
+    0.70711
+   ],
+   "room": "habitation",
+   "extent": [
+    0.109,
+    0.194,
+    0.0
+   ]
+  },
+  {
+   "id": "other-034",
+   "kind": "other",
+   "name": "zone:armoury",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.0,
+    0.825,
+    -3.583
+   ],
+   "rot": [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "room": "armoury",
+   "extent": [
+    3.892,
+    2.951,
+    4.973
+   ]
+  },
+  {
+   "id": "other-035",
+   "kind": "other",
+   "name": "zone:bridge",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.002,
+    -0.198,
+    -15.774
+   ],
+   "rot": [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "room": "bridge",
+   "extent": [
+    4.009,
+    3.523,
+    11.513
+   ]
+  },
+  {
+   "id": "other-036",
+   "kind": "other",
+   "name": "zone:component_room",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.507,
+    0.669,
+    4.324
+   ],
+   "rot": [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "room": "component_room",
+   "extent": [
+    6.505,
+    3.252,
+    9.523
+   ]
+  },
+  {
+   "id": "other-037",
+   "kind": "other",
+   "name": "zone:entrance",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.0,
+    -2.449,
+    6.304
+   ],
+   "rot": [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "room": "entrance",
+   "extent": [
+    3.501,
+    4.803,
+    7.478
+   ]
+  },
+  {
+   "id": "other-038",
+   "kind": "other",
+   "name": "zone:habitation",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.171,
+    0.209,
+    -6.725
+   ],
+   "rot": [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "room": "habitation",
+   "extent": [
+    6.011,
+    8.262,
+    28.901
+   ]
+  },
+  {
+   "id": "other-039",
+   "kind": "other",
+   "name": "zone:hangar",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.002,
+    -1.467,
+    -5.716
+   ],
+   "rot": [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "room": "hangar",
+   "extent": [
+    3.691,
+    4.193,
+    25.868
+   ]
+  },
+  {
+   "id": "other-040",
+   "kind": "other",
+   "name": "zone:modular_room",
+   "item": null,
+   "size": null,
+   "pos": [
+    -0.004,
+    0.681,
+    -2.587
+   ],
+   "rot": [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "room": "modular_room",
+   "extent": [
+    3.863,
+    2.366,
+    2.444
+   ]
+  },
+  {
+   "id": "other-041",
+   "kind": "other",
+   "name": "zone:turret_room",
+   "item": null,
+   "size": null,
+   "pos": [
+    0.221,
+    0.311,
+    -9.897
+   ],
+   "rot": [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "room": "turret_room",
+   "extent": [
+    6.127,
+    4.203,
+    8.888
+   ]
+  }
+ ]
+}
