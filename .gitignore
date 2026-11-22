@@ -22,3 +22,7 @@ Impression/
 *.stl
 *.glb
 *.png
+
+# exports web et journaux
+out_web/
+*.log

@@ -39,7 +39,7 @@ ITEM_RULES = [
     (r"turret", "turret"),
     (r"^mount_gimbal|^mount_|cannon|repeater|gatling|scattergun|_laser|ballistic|distortion|neutron|tachyon",
      "weapon"),
-    (r"bed|bunk", "bed"), (r"seat|chair", "seat"), (r"door", "door"), (r"elevator|lift", "elevator"),
+    (r"bed|bunk", "bed"), (r"seat|chair", "seat"), (r"door", "door"), (r"elevator|(?<![a-z])lift(?![a-z])", "elevator"),
     (r"airlock", "airlock"), (r"ladder", "ladder"), (r"cargogrid|cargo", "cargo"),
     (r"screen|display|terminal|console|mfd|dashboard", "terminal"),
 ]
@@ -49,7 +49,7 @@ PORT_RULES = [
     (r"power_?plant", "powerplant"), (r"cooler", "cooler"), (r"shield_gen", "shield"),
     (r"quantum_drive", "quantum"), (r"turret", "turret"), (r"missile|bomb|torpedo", "missile"),
     (r"weapon_(gun|wing|nose|pilot|tail|left|right)|_gun_|gimbal|hardpoint_weapon(?!locker|_regen)", "weapon"),
-    (r"seat(?!_access)", "seat"), (r"bed", "bed"), (r"(?<!lg_)door", "door"), (r"elevator|lift", "elevator"),
+    (r"seat(?!_access)", "seat"), (r"bed", "bed"), (r"(?<!lg_)door", "door"), (r"elevator|(?<![a-z])lift(?![a-z])", "elevator"),
     (r"airlock", "airlock"), (r"ladder", "ladder"), (r"ramp", "ramp"), (r"cargo", "cargo"),
     (r"screen|display|terminal|console|mfd|dashboard", "terminal"),
 ]

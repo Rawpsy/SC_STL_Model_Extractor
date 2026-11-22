@@ -63,13 +63,14 @@ def upload_dir(entity_dir, log=print):
             if r.status_code == 200:
                 last = ""
                 break
-            last = f"{name} : HTTP {r.status_code} {MESSAGES.get(r.status_code, '')}".strip()
+            body = r.text.strip().replace("\n", " ")[:300]
+            last = f"{name} : HTTP {r.status_code} {MESSAGES.get(r.status_code, '')} - reponse : {body}".strip()
             if r.status_code in MESSAGES:
                 break
             time.sleep(2)
         if last:
             return False, last
-        sent.append(f"{name} ({len(data) / 1e6:.2f} Mo)" if len(data) > 1e5 else name)
+        sent.append(f"{name} HTTP 200" + (f" ({len(data) / 1e6:.2f} Mo)" if len(data) > 1e5 else ""))
     return True, ", ".join(sent)
 
 
